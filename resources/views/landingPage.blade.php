@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursus Coding</title>
+    <!-- Development css -->
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/css/style.css') }}">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="text-gray-700">
+    <!-- ========== { HEADER }==========  -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <nav class="main-nav">
+            <div class="container xl:max-w-6xl mx-auto px-4">
+                <div class="lg:flex lg:justify-between">
+                    <div class="flex justify-between">
+                        <div class="mx-w-10 text-4xl font-bold capitalize text-gray-900 flex items-center">SI Ireng
+                        </div>
+                        <!-- mobile nav -->
+                        <div class="flex flex-row items-center py-4 lg:py-0">
+                            <div class="relative text-gray-900 hover:text-black block lg:hidden">
+                                <button type="button" class="menu-mobile block py-3 px-6 border-b-2 border-transparent">
+                                    <span class="sr-only">Mobile menu</span>
+                                    <svg class="open h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16"></path>
+                                    </svg>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="close bi bi-x-lg h-8 w-8" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row">
+                        <!-- nav menu -->
+                        <ul
+                            class="navbar bg-white lg:bg-transparent w-full hidden text-center lg:text-left lg:flex lg:flex-row text-gray-900 text-sm items-center font-bold">
+                            <li class="relative hover:text-black">
+                                <a class="active block py-3 lg:py-7 px-6 border-b-2 border-transparent"
+                                    href="#hero">Home</a>
+                            </li>
+                            <li class="relative hover:text-black">
+                                <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent" href="#konten">What we
+                                    do</a>
+                            </li>
+                            <li class="relative hover:text-black">
+                                <a target="_blank" class="block py-3 lg:py-7 px-6 border-b-2 border-transparent"
+                                    href="{{ route('login') }}">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header><!-- end header -->
+
+    <main id="content">
+        <!-- hero start -->
+        <div id="hero" class="section relative z-0 py-16 md:pt-32 md:pb-20 bg-gray-50">
+            <div class="container xl:max-w-6xl mx-auto px-4">
+                <div class="flex flex-wrap flex-row -mx-4 justify-center">
+                    <!-- content -->
+                    <div class="flex-shrink max-w-full px-4 sm:px-12 lg:px-18 w-full sm:w-9/12 lg:w-1/2 self-center">
+                        <img src="{{ asset('assets/landingPage/image/hero.svg') }}" class="w-full max-w-full h-auto"
+                            alt="creative agency">
+                    </div><!-- end content -->
+                    <!-- text -->
+                    <div class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
+                        <div class="text-center lg:text-left mt-6 lg:mt-0">
+                            <div class="mb-12">
+                                <h1 class="text-4xl leading-normal text-black font-bold mb-4">Platform Si
+                                    Ireng<br>Kursus <span data-toggle="typed"
+                                        data-options='{"strings": ["Coding Online", "Pemograman"]}'></span></h1>
+                                <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Kami akan
+                                    mengajarkan anda dasar-dasar bahasa pemograman.</p>
+                            </div>
+                            <a class="py-2.5 px-10 inline-block text-center leading-normal text-gray-100 bg-black border-b border-gray-800 hover:text-white hover:ring-0 focus:outline-none focus:ring-0"
+                                target="_blank" href="{{ route('register') }}">
+                                Daftar Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="konten" class="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+            <div class="container xl:max-w-6xl mx-auto px-4">
+                <!-- Heading start -->
+                <header class="text-center mx-auto mb-12 lg:px-20">
+                    <h2 class="text-2xl leading-normal mb-2 font-bold text-black">What We Do</h2>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
+                        <circle cx="50.1" cy="30.4" r="5" class="stroke-primary"
+                            style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
+                        <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary"
+                            style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+                        <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary"
+                            style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+                    </svg>
+                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Membantu anda untuk belajar
+                        dasar-dasar bahasa pemograman.</p>
+                </header><!-- End heading -->
+
+                <!-- row -->
+                <div class="flex flex-wrap flex-row-mx-4 text-center">
+                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+                        data-wow-duration="1s">
+                        <!-- content block -->
+                        <div
+                            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                            <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Materi Pemograman</h3>
+                            <p class="text-gray-500">Pelajari dasar-dasar coding dengan materi yang mudah dipahami untuk
+                                pemula.</p>
+                        </div> <!-- end content block -->
+                    </div>
+
+                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+                        data-wow-duration="1s" data-wow-delay=".1s">
+                        <!-- content block -->
+                        <div
+                            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                            <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Video Penjelasan</h3>
+                            <p class="text-gray-500">Tonton video pembelajaran agar proses belajar lebih mudah dan
+                                menyenangkan.</p>
+                        </div><!-- end content block -->
+                    </div>
+
+                    <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+                        data-wow-duration="1s" data-wow-delay=".3s">
+                        <!-- content block -->
+                        <div
+                            class="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                            <h3 class="text-lg leading-normal mb-2 font-semibold text-black">Quizz</h3>
+                            <p class="text-gray-500">Uji kemampuan dan pemahaman Anda melalui quiz singkat dan menarik.
+                            </p>
+                        </div><!-- end content block -->
+                    </div>
+                </div><!-- end row -->
+            </div>
+        </div>
+
+        <div class="section relative z-0 py-16 md:pt-20 md:pb-20 bg-gray-50">
+            <div class="container xl:max-w-6xl mx-auto px-4 text-center">
+                <header class="text-center mx-auto mb-12 lg:px-20">
+                    <h1 class="text-4xl leading-normal mb-2 font-bold text-black">Daftarkan diri anda sekarang juga <br>
+                        Bergabung dengan kami untuk belajar dasar-dasar pemograman</h1>
+                </header>
+            </div>
+        </div>
+    </main>
+    <!-- end main -->
+    <footer class="bg-gray-100 text-gray-700">
+        <!--Footer content-->
+        <div id="footer-content" class="relative pt-8 xl:pt-16 pb-6 xl:pb-12">
+            <div class="container xl:max-w-6xl mx-auto px-4 overflow-hidden">
+                <div class="flex flex-wrap flex-row lg:justify-between -mx-3">
+                    <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
+                        <div class="flex items-center mb-2">
+                            <span class="text-3xl leading-normal mb-2 font-bold text-gray-800 mt-2">Si Ireng</span>
+                        </div>
+                        <p>Kursus pembelajaran dasar coding gartis.</p>
+                        <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
+                            <!--facebook-->
+                            <li class="inline-block">
+                                <a class="hover:text-gray-800" rel="noopener noreferrer" href="#" title="Facebook">
+                                    <!-- <i class="fab fa-facebook fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
+                                        viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <!--twitter-->
+                            <li class="inline-block">
+                                <a class="hover:text-gray-800" rel="noopener noreferrer" href="#" title="Twitter">
+                                    <!-- <i class="fab fa-twitter fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
+                                        viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <!--youtube-->
+                            <li class="inline-block">
+                                <a class="hover:text-gray-800" rel="noopener noreferrer" href="#" title="Youtube">
+                                    <!-- <i class="fab fa-youtube fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
+                                        viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M508.64,148.79c0-45-33.1-81.2-74-81.2C379.24,65,322.74,64,265,64H247c-57.6,0-114.2,1-169.6,3.6-40.8,0-73.9,36.4-73.9,81.4C1,184.59-.06,220.19,0,255.79q-.15,53.4,3.4,106.9c0,45,33.1,81.5,73.9,81.5,58.2,2.7,117.9,3.9,178.6,3.8q91.2.3,178.6-3.8c40.9,0,74-36.5,74-81.5,2.4-35.7,3.5-71.3,3.4-107Q512.24,202.29,508.64,148.79ZM207,353.89V157.39l145,98.2Z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <!--instagram-->
+                            <li class="inline-block">
+                                <a class="hover:text-gray-800" rel="noopener noreferrer" href="#" title="Instagram">
+                                    <!-- <i class="fab fa-instagram fa-2x"></i> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
+                                        viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z">
+                                        </path>
+                                        <path fill="currentColor"
+                                            d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z">
+                                        </path>
+                                        <path fill="currentColor"
+                                            d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li><!--end instagram-->
+                        </ul>
+                    </div>
+                    <div class="flex-shrink max-w-full w-full lg:w-3/5 px-3">
+                        <div class="flex flex-wrap flex-row">
+                            <div class="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
+                                <h4 class="text-base leading-normal mb-3 uppercase text-gray-800">Support</h4>
+                            </div>
+                            <div class="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
+                                <h4 class="text-base leading-normal mb-3 uppercase text-gray-800">Includes</h4>
+                            </div>
+                            <div class="flex-shrink max-w-full w-1/2 md:w-1/3 mb-6 lg:mb-0">
+                                <h4 class="text-base leading-normal mb-3 uppercase text-gray-800">Legal</h4>
+                                <ul>
+                                    <li class="py-1 hover:text-gray-900"><a href="#">Privacy Policy</a></li>
+                                    <li class="py-1 hover:text-gray-900"><a href="#">Terms of Use</a></li>
+                                    <li class="py-1 hover:text-gray-900"><a href="#">License</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Start footer copyright-->
+        <div class="footer-dark">
+            <div class="container xl:max-w-6xl mx-auto px-4 py-4 border-t border-gray-200 border-opacity-10">
+                <div class="row">
+                    <div class="col-12 col-md text-center">
+                        <p class="d-block my-3">Copyright © Ireng Gareng | All rights reserved.</p>
+                        <p>Developed by <span class="font-bold">Group 6</span>
+                    </div>
+                </div>
+            </div>
+        </div><!--End footer copyright-->
+    </footer>
+
+    <script src="{{ asset('assets/landingPage/js/scripts.js') }}"></script>
+
+</body>
+
+</html>
