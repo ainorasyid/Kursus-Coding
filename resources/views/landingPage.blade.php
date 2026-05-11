@@ -59,7 +59,7 @@
                                     do</a>
                             </li>
                             <li class="relative hover:text-black">
-                                <a target="_blank" class="block py-3 lg:py-7 px-6 border-b-2 border-transparent"
+                                <a class="block py-3 lg:py-7 px-6 border-b-2 border-transparent"
                                     href="{{ route('login') }}">Login</a>
                             </li>
                         </ul>
@@ -90,7 +90,7 @@
                                     mengajarkan anda dasar-dasar bahasa pemograman.</p>
                             </div>
                             <a class="py-2.5 px-10 inline-block text-center leading-normal text-gray-100 bg-black border-b border-gray-800 hover:text-white hover:ring-0 focus:outline-none focus:ring-0"
-                                target="_blank" href="{{ route('register') }}">
+                                href="{{ route('register') }}">
                                 Daftar Sekarang
                             </a>
                         </div>

@@ -36,6 +36,12 @@
 <!-- [Body] Start -->
 
 <body>
+    <a href="{{ route('landing') }}"
+    class="fixed flex z-50 items-center gap-2 rounded-lg bg-white px-4 py-2 shadow-md hover:shadow-lg transition"
+    style="top: 30px; left: 30px;">
+        <i data-feather="arrow-left" class="w-5 h-5"></i>
+        <span class="text-sm font-medium">Back</span>
+    </a>
     <!-- [ Pre-loader ] start -->
     <div class="loader-bg fixed inset-0 bg-white dark:bg-themedark-cardbg z-[1034]">
         <div class="loader-track h-[5px] w-full inline-block absolute overflow-hidden top-0">
@@ -63,26 +69,44 @@
                     <div class="card sm:my-12  w-full shadow-none">
                         <div class="card-body !p-10">
                             <h4 class="text-center font-medium mb-4">Sign up</h4>
-                            <div class="grid grid-cols-12 gap-3 mb-3">
-                                <div class="col-span-12 sm:col-span-6">
-                                    <input type="text" class="form-control" placeholder="First Name">
+                            <form action="{{ route('register.store') }}" method="POST">
+                                @csrf
+                                <div class="grid grid-cols-12 gap-3 mb-3">
+                                    <div class="col-span-12 sm:col-span-6">
+                                        <input type="text" class="form-control @error('firstName') border-red-500 @else border-gray-300 @enderror" placeholder="First Name" name="firstName" >
+                                        @error('firstName')
+                                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-span-12 sm:col-span-6">
+                                        <input type="text" class="form-control @error('lastName') border-red-500 @else border-gray-300 @enderror" placeholder="Last Name" name="lastName" >
+                                        @error('lastName')
+                                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
-                                <div class="col-span-12 sm:col-span-6">
-                                    <input type="text" class="form-control" placeholder="Last Name">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control @error('email') border-red-500 @else border-gray-300 @enderror" placeholder="Email Address" name="email" >
+                                    @error('email')
+                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Email Address">
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="mb-4">
-                                <input type="password" class="form-control" placeholder="Confirm Password">
-                            </div>
-                            <div class="mt-4 text-center">
-                                <button type="button" class="btn btn-primary mx-auto shadow-2xl">Sign up</button>
-                            </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control @error('password') border-red-500 @else border-gray-300 @enderror" placeholder="Password" name="password" >
+                                    @error('password')
+                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <input type="password" class="form-control @error('password_confirmation') border-red-500 @else border-gray-300 @enderror" placeholder="Confirm Password" name="confirmPass" >
+                                    @error('confirmPass')
+                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="mt-4 text-center">
+                                    <button type="submit" class="btn btn-primary mx-auto shadow-2xl">Sign up</button>
+                                </div>
+                            </form>
                             <div class="flex justify-between items-end flex-wrap mt-4">
                                 <h6 class="font-medium mb-0">Already have an Account?</h6>
                                 <a href="{{ route('login') }}" class="text-primary-500">Login</a>

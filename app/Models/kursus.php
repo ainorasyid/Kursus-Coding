@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-class kursus extends Model
+#[Fillable(['judul', 'deskripsi'])]
+class Kursus extends Model
 {
-    //
+    protected $table = 'kursus';
 }
