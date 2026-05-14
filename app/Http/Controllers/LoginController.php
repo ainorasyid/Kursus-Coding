@@ -21,11 +21,35 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->to('/dashboard');
+            $user =  Auth::user();
+
+            // Seusuai role
+            switch ($user->peran_id){
+                case 1:
+                    return redirect()->route('admin.dashboard');
+                case 2:
+                    return redirect()->route('mentor.dashboard');
+                case 3:
+                    return redirect()->route('user.dashboard');
+                default:
+                    Auth::logout();
+                    return redirect('/login')
+                        ->with('error', 'Tidak Valid');
+            }
         }
 
         return back()->withErrors([
             'error' => 'Email atau password salah',
         ])->onlyInput('email');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout(); // logout user
+
+        $request->session()->invalidate(); // hapus session lama
+        $request->session()->regenerateToken(); // generate csrf token baru
+
+        return redirect('/login');
     }
 }

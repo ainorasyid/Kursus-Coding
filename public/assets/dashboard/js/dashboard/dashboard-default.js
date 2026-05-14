@@ -1,261 +1,145 @@
 'use strict';
-document.addEventListener('DOMContentLoaded', function () {
-  setTimeout(function () {
-    floatchart();
-  }, 500);
-});
+// [ world-low chart ] start
+(function () {
+  var map = new jsVectorMap({
+    selector: '#world-low',
+    map: 'world',
+    markersSelectable: true,
+    markers: [
+      {
+        coords: [-14.235, -51.9253]
+      },
+      {
+        coords: [35.8617, 104.1954]
+      },
+      {
+        coords: [61, 105]
+      },
+      {
+        coords: [26.8206, 30.8025]
+      }
+    ],
+    markerStyle: {
+      initial: {
+        fill: '#3f4d67'
+      },
+      hover: {
+        fill: '#04a9f5'
+      }
+    },
+    markerLabelStyle: {
+      initial: {
+        fontFamily: "'Inter', sans-serif",
+        fontSize: 13,
+        fontWeight: 500,
+        fill: '#3f4d67'
+      }
+    }
+  });
+})();
+// [ world-low chart ] end
 
-function floatchart() {
-  (function () {
-    var options1 = {
-      chart: { type: 'bar', height: 50, sparkline: { enabled: true } },
-      colors: ['#04a9f5'],
-      plotOptions: { bar: { columnWidth: '80%' } },
-      series: [
-        {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
-        }
-      ],
-      xaxis: { crosshairs: { width: 1 } },
-      tooltip: {
-        fixed: { enabled: false },
-        x: { show: false },
-        y: {
-          title: {
-            formatter: function (seriesName) {
-              return '';
-            }
-          }
-        },
-        marker: { show: false }
+// [ Widget-line-chart ] start
+var options = {
+  chart: {
+    type: 'line',
+    height: 210,
+    zoom: {
+      enabled: false
+    },
+    toolbar: {
+      show: false
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  colors: ['#fff'],
+  fill: {
+    type: 'solid'
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: '30%'
+    }
+  },
+  series: [
+    {
+      data: [10, 60, 45, 72, 45, 86]
+    }
+  ],
+  xaxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    labels: {
+      style: {
+        colors: '#fff'
       }
-    };
-    var chart = new ApexCharts(document.querySelector('#all-earnings-graph'), options1);
-    chart.render();
-    var options2 = {
-      chart: { type: 'bar', height: 50, sparkline: { enabled: true } },
-      colors: ['#f4c22b'],
-      plotOptions: { bar: { columnWidth: '80%' } },
-      series: [
-        {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
-        }
-      ],
-      xaxis: { crosshairs: { width: 1 } },
-      tooltip: {
-        fixed: { enabled: false },
-        x: { show: false },
-        y: {
-          title: {
-            formatter: function (seriesName) {
-              return '';
-            }
-          }
-        },
-        marker: { show: false }
-      }
-    };
-    var chart = new ApexCharts(document.querySelector('#page-views-graph'), options2);
-    chart.render();
-    var options3 = {
-      chart: { type: 'bar', height: 50, sparkline: { enabled: true } },
-      colors: ['#2CA87F'],
-      plotOptions: { bar: { columnWidth: '80%' } },
-      series: [
-        {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
-        }
-      ],
-      xaxis: { crosshairs: { width: 1 } },
-      tooltip: {
-        fixed: { enabled: false },
-        x: { show: false },
-        y: {
-          title: {
-            formatter: function (seriesName) {
-              return '';
-            }
-          }
-        },
-        marker: { show: false }
-      }
-    };
-    var chart = new ApexCharts(document.querySelector('#total-task-graph'), options3);
-    chart.render();
-    var options4 = {
-      chart: { type: 'bar', height: 50, sparkline: { enabled: true } },
-      colors: ['#DC2626'],
-      plotOptions: { bar: { columnWidth: '80%' } },
-      series: [
-        {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
-        }
-      ],
-      xaxis: { crosshairs: { width: 1 } },
-      tooltip: {
-        fixed: { enabled: false },
-        x: { show: false },
-        y: {
-          title: {
-            formatter: function (seriesName) {
-              return '';
-            }
-          }
-        },
-        marker: { show: false }
-      }
-    };
-    var chart = new ApexCharts(document.querySelector('#download-graph'), options4);
-    chart.render();
-    var options5 = {
-      chart: {
-        type: 'area',
-        height: 300,
-        toolbar: {
-          show: false
-        }
-      },
-      colors: ['#0d6efd'],
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          type: 'vertical',
-          inverseColors: false,
-          opacityFrom: 0.5,
-          opacityTo: 0
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        width: 1
-      },
-      plotOptions: {
-        bar: {
-          columnWidth: '45%',
-          borderRadius: 4
-        }
-      },
-      grid: {
-        strokeDashArray: 4
-      },
-      series: [
-        {
-          data: [30, 60, 40, 70, 50, 90, 50, 55, 45, 60, 50, 65]
-        }
-      ],
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false
-        }
-      }
-    };
-    var chart = new ApexCharts(document.querySelector('#customer-rate-graph'), options5);
-    chart.render();
-    var options6 = {
-      chart: {
-        type: 'area',
-        height: 60,
-        stacked: true,
-        sparkline: { enabled: true }
-      },
-      colors: ['#04a9f5'],
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          type: 'vertical',
-          inverseColors: false,
-          opacityFrom: 0.5,
-          opacityTo: 0
-        }
-      },
-      stroke: { curve: 'smooth', width: 2 },
-      series: [{ data: [5, 25, 3, 10, 4, 50, 0] }]
-    };
-    var chart = new ApexCharts(document.querySelector('#total-tasks-graph'), options6);
-    chart.render();
-    var options7 = {
-      chart: {
-        type: 'area',
-        height: 60,
-        stacked: true,
-        sparkline: { enabled: true }
-      },
-      colors: ['#DC2626'],
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          type: 'vertical',
-          inverseColors: false,
-          opacityFrom: 0.5,
-          opacityTo: 0
-        }
-      },
-      stroke: { curve: 'smooth', width: 2 },
-      series: [{ data: [0, 50, 4, 10, 3, 25, 5] }]
-    };
-    var chart = new ApexCharts(document.querySelector('#pending-tasks-graph'), options7);
-    chart.render();
-    var options8 = {
-      chart: {
-        height: 320,
-        type: 'donut'
-      },
-      series: [27, 23, 20, 17],
-      colors: ['#04a9f5', '#f4c22b', '#2CA87F', '#04a9f5'],
-      labels: ['Total income', 'Total rent', 'Download', 'Views'],
-      fill: {
-        opacity: [1, 1, 1, 0.3]
-      },
-      legend: {
+    }
+  },
+  yaxis: {
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    crosshairs: {
+      width: 0
+    },
+    labels: {
+      show: false
+    }
+  },
+  grid: {
+    padding: {
+      bottom: 0,
+      left: 10
+    },
+    xaxis: {
+      lines: {
         show: false
-      },
-      plotOptions: {
-        pie: {
-          donut: {
-            size: '65%',
-            labels: {
-              show: true,
-              name: {
-                show: true
-              },
-              value: {
-                show: true
-              }
-            }
-          }
+      }
+    },
+    yaxis: {
+      lines: {
+        show: false
+      }
+    }
+  },
+  markers: {
+    size: 5,
+    colors: '#fff',
+    opacity: 0.9,
+    strokeWidth: 2,
+    hover: {
+      size: 7
+    }
+  },
+  tooltip: {
+    fixed: {
+      enabled: false
+    },
+    x: {
+      show: false
+    },
+    y: {
+      title: {
+        formatter: function (seriesName) {
+          return 'Statistics :';
         }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            plotOptions: {
-              pie: {
-                donut: {
-                  size: '65%',
-                  labels: {
-                    show: true
-                  }
-                }
-              }
-            }
-          }
-        }
-      ]
-    };
-    var chart = new ApexCharts(document.querySelector('#total-income-graph'), options8);
-    chart.render();
-  })();
-}
+      }
+    },
+    marker: {
+      show: false
+    }
+  }
+};
+var chart = new ApexCharts(document.querySelector('#Widget-line-chart'), options);
+chart.render();
+// [ Widget-line-chart ] end

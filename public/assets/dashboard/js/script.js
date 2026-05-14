@@ -1,18 +1,184 @@
 /**
 =========================================================================
 =========================================================================
-Template Name: Datta Able - Tailwind Admin Template
+Template Name: Datta Able - Admin Template
 Author: CodedThemes
 Support: https://codedthemes.support-hub.io/
 File: script.js
+Description:  this file will contains behavior, properties, 
+              functionality and interactions of a small module of ui element 
+              which used to build a theme layout.
 =========================================================================
 =========================================================================
 */
+
 'use strict';
 var flg = '0';
+document.addEventListener('DOMContentLoaded', function () {
+  // remove pre-loader start
+  setTimeout(function () {
+    var loaderBg = document.querySelector('.loader-bg');
+    if (loaderBg) {
+      loaderBg.remove();
+    }
+  }, 400);
 
-// Function to handle menu click events (collpase menus and it's submenu also collapse)
+  // remove pre-loader end
+  if (document.body.hasAttribute('data-pc-layout') && document.body.getAttribute('data-pc-layout') === 'horizontal') {
+    if (window.innerWidth <= 1024) {
+      add_scroller();
+    }
+  } else {
+    add_scroller();
+  }
 
+  var hamburger = document.querySelector('.hamburger');
+  if (hamburger && !hamburger.classList.contains('is-active')) {
+    hamburger.addEventListener('click', function () {
+      // Toggle the 'is-active' class
+      hamburger.classList.toggle('is-active');
+    });
+  }
+
+  // Menu overlay layout start
+  var temp_overlay_menu = document.querySelector('#overlay-menu');
+  if (temp_overlay_menu) {
+    temp_overlay_menu.addEventListener('click', function () {
+      var pcSidebar = document.querySelector('.pc-sidebar');
+      menu_click(); // Assuming this initializes any menu interactions needed
+
+      if (pcSidebar.classList.contains('pc-over-menu-active')) {
+        remove_overlay_menu();
+      } else {
+        pcSidebar.classList.add('pc-over-menu-active');
+
+        // Check if overlay already exists before adding
+        if (!document.querySelector('.pc-menu-overlay')) {
+          pcSidebar.insertAdjacentHTML('beforeend', '<div class="pc-menu-overlay"></div>');
+
+          // Add event listener to the overlay for removing menu and overlay on click
+          document.querySelector('.pc-menu-overlay').addEventListener('click', function () {
+            remove_overlay_menu();
+            document.querySelector('.hamburger').classList.remove('is-active'); // Ensuring hamburger is deactivated
+          });
+        }
+      }
+    });
+  }
+  // Menu overlay layout end
+  // Menu collapse click start
+  var mobile_collapse_over = document.querySelector('#mobile-collapse');
+  if (mobile_collapse_over) {
+    mobile_collapse_over.addEventListener('click', function () {
+      var temp_sidebar = document.querySelector('.pc-sidebar');
+      if (temp_sidebar) {
+        if (temp_sidebar.classList.contains('mob-sidebar-active')) {
+          rm_menu(); // Close menu if already active
+        } else {
+          temp_sidebar.classList.add('mob-sidebar-active');
+
+          // Only add the overlay if it doesn't already exist
+          if (!document.querySelector('.pc-menu-overlay')) {
+            temp_sidebar.insertAdjacentHTML('beforeend', '<div class="pc-menu-overlay"></div>');
+
+            // Add event listener to remove the menu when overlay is clicked
+            document.querySelector('.pc-menu-overlay').addEventListener('click', function () {
+              rm_menu();
+            });
+          }
+        }
+      }
+    });
+  }
+  // Menu collapse click end
+
+  // Menu collapse click start
+  var topbar_link_list = document.querySelectorAll('.pc-horizontal .topbar .pc-navbar > li > a');
+  if (topbar_link_list.length) {
+    topbar_link_list.forEach((link) => {
+      link.addEventListener('click', function (e) {
+        var targetElement = e.target;
+        setTimeout(function () {
+          var secondChild = targetElement.parentNode.children[1];
+          if (secondChild) {
+            secondChild.removeAttribute('style');
+          }
+        }, 1000);
+      });
+    });
+  }
+  // Menu collapse click end
+  // Horizontal menu click js start
+  var topbar_link_list = document.querySelectorAll('.pc-horizontal .topbar .pc-navbar > li > a');
+  if (topbar_link_list) {
+    topbar_link_list.forEach((link) => {
+      link.addEventListener('click', function (e) {
+        var targetElement = e.target;
+        setTimeout(function () {
+          targetElement.parentNode.children[1].removeAttribute('style');
+        }, 1000);
+      });
+    });
+  }
+  // Horizontal menu click js end
+
+  // header dropdown scrollbar start
+  function initializeSimpleBar(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+      new SimpleBar(element);
+    }
+  }
+  // Initialize SimpleBar for message notification scroll
+  initializeSimpleBar('.profile-notification-scroll');
+  // Initialize SimpleBar for header notification scroll
+  initializeSimpleBar('.header-notification-scroll');
+  // header dropdown scrollbar end
+
+  // component scrollbar start
+  const cardBody = document.querySelector('.component-list-card .card-body');
+  if (cardBody) {
+    new SimpleBar(cardBody);
+  }
+  // component- dropdown scrollbar end
+
+  // sidebar toggle event
+  const sidebarHideBtn = document.querySelector('#sidebar-hide');
+  const sidebar = document.querySelector('.pc-sidebar');
+
+  if (sidebarHideBtn && sidebar) {
+    sidebarHideBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('pc-sidebar-hide');
+    });
+  }
+
+  // search dropdown trigger event
+  const searchDrp = document.querySelector('.trig-drp-search');
+  if (searchDrp) {
+    searchDrp.addEventListener('shown.bs.dropdown', () => {
+      const searchInput = document.querySelector('.drp-search input');
+      if (searchInput) {
+        searchInput.focus();
+      }
+    });
+  }
+});
+
+// Menu click start
+function add_scroller() {
+  // Initialize menu click behavior
+  menu_click();
+
+  // Cache the navbar content element
+  var navbarContent = document.querySelector('.navbar-content');
+
+  // Check if the navbar content exists and SimpleBar is not already initialized
+  if (navbarContent && !navbarContent.SimpleBar) {
+    new SimpleBar(navbarContent);
+  }
+}
+
+// Menu click start
 function menu_click() {
   // Remove click event listeners from navigation menu items
   var elem = document.querySelectorAll('.pc-navbar li');
@@ -111,261 +277,161 @@ function menu_click() {
   }
 }
 
-
-// Initialize menu click function on DOMContentLoaded (function call on page load)
-document.addEventListener('DOMContentLoaded', menu_click);
-
-// Initialize various components on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', function () {
-  // feather icon start
-  feather.replace();
-  // feather icon end
-
-  // Check for specific layout and add scrollbar if necessary(add scrollbar from 1024 screen size in horizontal layout)
-  if (document.querySelector('html').hasAttribute('data-pc-layout')) {
-    if (document.querySelector('html').getAttribute('data-pc-layout') == 'horizontal') {
-      var docW = window.innerWidth;
-      if (docW <= 1024) {
-        add_scroller();
-      }
-    }
-  } else {
-    add_scroller();
-  }
-
-  // Menu collapse click start (when click it's open and close sidebar for mobile screen)
-  var mobile_collapse_over = document.querySelector('#mobile-collapse');
-  if (mobile_collapse_over) {
-    mobile_collapse_over.addEventListener('click', function () {
-      var mobile_sidebar = document.querySelector('.pc-sidebar');
-      if (mobile_sidebar) {
-        if (document.querySelector('.pc-sidebar').classList.contains('mob-sidebar-active')) {
-          rm_menu();
-        } else {
-          document.querySelector('.pc-sidebar').classList.add('mob-sidebar-active');
-          // add overlay when sidebar open
-          document.querySelector('.pc-sidebar').insertAdjacentHTML('beforeend', '<div class="pc-menu-overlay"></div>');
-          document.querySelector('.pc-menu-overlay').addEventListener('click', function () {
-            rm_menu();
-          });
-        }
-      }
-    });
-  }
-  // Menu collapse click end
-
-  // header dropdown scrollbar start
-  if (document.querySelector('.header-notification-scroll')) {
-    new SimpleBar(document.querySelector('.header-notification-scroll'));
-  }
-
-  if (document.querySelector('.profile-notification-scroll')) {
-    new SimpleBar(document.querySelector('.profile-notification-scroll'));
-  }
-  // header dropdown scrollbar end
-
-  // component scrollbar start
-  if (document.querySelector('.component-list-card .scroll-div')) {
-    new SimpleBar(document.querySelector('.component-list-card .scroll-div'));
-  }
-  // component- dropdown scrollbar end
-
-  // for sidebar close
-  var sidebar_hide = document.querySelector('#sidebar-hide');
-  if (sidebar_hide) {
-    sidebar_hide.addEventListener('click', function () {
-      if (document.querySelector('.pc-sidebar').classList.contains('pc-sidebar-hide')) {
-        document.querySelector('.pc-sidebar').classList.remove('pc-sidebar-hide');
-      } else {
-        document.querySelector('.pc-sidebar').classList.add('pc-sidebar-hide');
-      }
-    });
-  }
-
-  // for input focus add when click search icon
-  if (document.querySelector('.trig-drp-search')) {
-    const search_drp = document.querySelector('.trig-drp-search');
-    search_drp.addEventListener('shown.bs.dropdown', (event) => {
-      document.querySelector('.drp-search input').focus();
-    });
-  }
-
-  // layout options (when click customizer layout options according to that set value in local storage)
-  setLayout();
-  var if_layout = document.querySelectorAll('.theme-main-layout');
-  var layoutValue = 'vertical';
-  if (if_layout) {
-    var preset_layout = document.querySelectorAll('.theme-main-layout > a');
-    preset_layout.forEach(function (element) {
-      element.addEventListener('click', function () {
-        // Reload the page after setting the layout for the first time to sync in all open tabs
-        location.reload();
-
-        document.querySelectorAll('.theme-main-layout > a').forEach(function (el) {
-          el.classList.remove('active');
-        });
-        this.classList.add('active');
-        if (this.getAttribute('data-value') == 'horizontal') {
-          layoutValue = 'horizontal';
-        } else if (this.getAttribute('data-value') == 'compact') {
-          layoutValue = 'compact';
-        } else if (this.getAttribute('data-value') == 'tab') {
-          layoutValue = 'tab';
-        } else if (this.getAttribute('data-value') == 'color-header') {
-          layoutValue = 'color-header';
-        } else {
-          layoutValue = 'vertical';
-        }
-
-        // Set data to localStorage
-        localStorage.setItem('layout', layoutValue);
-
-        setLayout();
-      });
-    });
-  }
-});
-
-// Function to set the layout based on data stored in localStorage
-function setLayout() {
-  var layout = localStorage.getItem('layout'); // Retrieve layout data from localStorage
-
-  // Pass the layout value to main_layout_change function
-  main_layout_change(layout);
-
-  // Load corresponding scripts or perform actions based on the layout value
-  if (layout !== null && layout !== '') {
-    var script = document.createElement('script');
-    if (layout === 'horizontal') {
-      document.querySelector('.pc-sidebar').classList.add('d-none');
-      script.src = '../assets/js/layout-horizontal.js'; // Load script for horizontal layout
-      document.body.appendChild(script);
-    } else if (layout === 'color-header') {
-      // Change logo color for color-header layout
-      if (document.querySelector('.pc-sidebar .m-header .logo-lg')) {
-        document.querySelector('.pc-sidebar .m-header .logo-lg').setAttribute('src', '../assets/images/logo-white.svg');
-      }
-    } else if (layout === 'compact') {
-      script.src = '../assets/js/layout-compact.js'; // Load script for compact layout
-      document.body.appendChild(script);
-    } else if (layout === 'tab') {
-      script.src = '../assets/js/layout-tab.js'; // Load script for tab layout
-      document.body.appendChild(script);
-    }
-  }
-
-  // If no layout data found in localStorage, set default layout to 'vertical'
-  if (layout === null) {
-    main_layout_change('vertical');
-    localStorage.setItem('layout', 'vertical');
-  }
-}
-
-// Function to handle menu click and scrollbar initialization
-function add_scroller() {
-  // Initialize scrollbar if navbar-content exists
-  if (document.querySelector('.navbar-content')) {
-    new SimpleBar(document.querySelector('.navbar-content'));
-  }
-}
-
-// Function to hide mobile menu (sidebar hide on click overlay)
+// hide menu in mobile menu
 function rm_menu() {
-  // Remove active class from mobile menu elements
+  // Cache the necessary elements
   var sidebar = document.querySelector('.pc-sidebar');
   var topbar = document.querySelector('.topbar');
+  var sidebarOverlay = document.querySelector('.pc-sidebar .pc-menu-overlay');
+  var topbarOverlay = document.querySelector('.topbar .pc-menu-overlay');
 
+  // Remove active class from sidebar if it exists
   if (sidebar) {
     sidebar.classList.remove('mob-sidebar-active');
   }
+
+  // Remove active class from topbar if it exists
   if (topbar) {
     topbar.classList.remove('mob-sidebar-active');
   }
 
-  // Remove menu overlay elements with error checking
-  var sidebarOverlay = document.querySelector('.pc-sidebar .pc-menu-overlay');
-  var topbarOverlay = document.querySelector('.topbar .pc-menu-overlay');
-
+  // Remove sidebar overlay if it exists
   if (sidebarOverlay) {
     sidebarOverlay.remove();
   }
+
+  // Remove topbar overlay if it exists
   if (topbarOverlay) {
     topbarOverlay.remove();
   }
 }
 
-// Function to remove overlay menu
+// remove overlay
 function remove_overlay_menu() {
-  // Remove active class from sidebar and topbar if they exist
   var sidebar = document.querySelector('.pc-sidebar');
   var topbar = document.querySelector('.topbar');
+  var sidebarOverlay = document.querySelector('.pc-sidebar .pc-menu-overlay');
+  var topbarOverlay = document.querySelector('.topbar .pc-menu-overlay');
 
+  // Remove active class from sidebar
   if (sidebar) {
     sidebar.classList.remove('pc-over-menu-active');
-    var sidebarOverlay = sidebar.querySelector('.pc-menu-overlay');
-    if (sidebarOverlay) {
-      sidebarOverlay.remove();
-    }
   }
 
+  // Remove active class from topbar if exists
   if (topbar) {
     topbar.classList.remove('mob-sidebar-active');
-    var topbarOverlay = topbar.querySelector('.pc-menu-overlay');
-    if (topbarOverlay) {
-      topbarOverlay.remove();
-    }
+  }
+
+  // Remove the overlay elements if they exist
+  if (sidebarOverlay) {
+    sidebarOverlay.remove();
+  }
+
+  if (topbarOverlay) {
+    topbarOverlay.remove();
   }
 }
 
-// Event listener to initialize tooltips, popovers, and toasts on window load
+// bootstrap componant
 window.addEventListener('load', function () {
-  // Remove pre-loader after page load with a fade-out effect
-  var loader = document.querySelector('.loader-bg');
-  if (loader) {
-    loader.style.transition = 'opacity 0.5s ease';
-    loader.style.opacity = '0';
-
-    // Wait for the fade-out transition to complete before removing the element
-    setTimeout(function () {
-      loader.remove();
-    }, 500); // Duration matches the CSS transition duration
-  }
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+  var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+  var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl);
+  });
 });
 
-// Function to mark active menu items based on current page URL
+// active menu item list start
 var elem = document.querySelectorAll('.pc-sidebar .pc-navbar a');
 for (var l = 0; l < elem.length; l++) {
-  // Check if current URL matches menu item URL
   var pageUrl = window.location.href.split(/[?#]/)[0];
   if (elem[l].href == pageUrl && elem[l].getAttribute('href') != '') {
-    // Add active class to matching menu item and its parent elements
     elem[l].parentNode.classList.add('active');
+
     elem[l].parentNode.parentNode.parentNode.classList.add('pc-trigger');
     elem[l].parentNode.parentNode.parentNode.classList.add('active');
     elem[l].parentNode.parentNode.style.display = 'block';
+
     elem[l].parentNode.parentNode.parentNode.parentNode.parentNode.classList.add('pc-trigger');
     elem[l].parentNode.parentNode.parentNode.parentNode.style.display = 'block';
   }
 }
 
-// Change authentication logo
-document.querySelectorAll('.auth-main.v2 .img-brand').forEach((img) => {
-  img.setAttribute('src', '../assets/images/logo-white.svg');
+// like event
+var likeInputs = document.querySelectorAll('.prod-likes .form-check-input');
+likeInputs.forEach(function (likeInput) {
+  likeInput.addEventListener('change', function (event) {
+    var parentElement = event.target.parentNode;
+
+    if (event.target.checked) {
+      // Append like animation HTML
+      parentElement.insertAdjacentHTML(
+        'beforeend',
+        `<div class="pc-like">
+          <div class="like-wrapper">
+            <span>
+              <span class="pc-group">
+                <span class="pc-dots"></span>
+                <span class="pc-dots"></span>
+                <span class="pc-dots"></span>
+                <span class="pc-dots"></span>
+              </span>
+            </span>
+          </div>
+        </div>`
+      );
+
+      // Add animation class
+      parentElement.querySelector('.pc-like').classList.add('pc-like-animate');
+
+      // Remove the like animation after 3 seconds
+      setTimeout(function () {
+        var likeElement = parentElement.querySelector('.pc-like');
+        if (likeElement) {
+          likeElement.remove();
+        }
+      }, 3000);
+    } else {
+      // Remove the like animation if it exists
+      var likeElement = parentElement.querySelector('.pc-like');
+      if (likeElement) {
+        likeElement.remove();
+      }
+    }
+  });
 });
 
-// Function to remove CSS classes with a given prefix from a DOM node
+// authentication logo
+// Select all elements with the class 'img-brand' inside '.auth-main.v2'
+var tc = document.querySelectorAll('.auth-main.v2 .img-brand');
+
+// Loop through each selected element
+for (var t = 0; t < tc.length; t++) {
+  // Change the 'src' attribute to the new logo path
+  tc[t].setAttribute('src', '../assets/images/logo-white.svg');
+}
+
+// =======================================================
+// =======================================================
+
 function removeClassByPrefix(node, prefix) {
-  // Create a copy of the class list to avoid issues with dynamic length
-  node.classList.forEach((value) => {
+  for (let i = 0; i < node.classList.length; i++) {
+    let value = node.classList[i];
     if (value.startsWith(prefix)) {
       node.classList.remove(value);
     }
-  });
+  }
 }
 
-// Functions for sliding up, sliding down, and toggling visibility of elements
 let slideUp = (target, duration = 0) => {
-  // Slide up animation implementation
   target.style.transitionProperty = 'height, margin, padding';
   target.style.transitionDuration = duration + 'ms';
   target.style.boxSizing = 'border-box';
@@ -380,7 +446,6 @@ let slideUp = (target, duration = 0) => {
 };
 
 let slideDown = (target, duration = 0) => {
-  // Slide down animation implementation
   target.style.removeProperty('display');
   let display = window.getComputedStyle(target).display;
 
@@ -412,8 +477,7 @@ let slideDown = (target, duration = 0) => {
 };
 
 var slideToggle = (target, duration = 0) => {
-  // Slide toggle animation implementation
-  if (window.getComputedStyle(target).height === '0px') {
+  if (window.getComputedStyle(target).display === 'none') {
     return slideDown(target, duration);
   } else {
     return slideUp(target, duration);
