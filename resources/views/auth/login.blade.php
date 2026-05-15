@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Studiova</title>
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/libs/owl.carousel/dist/assets/owl.carousel.min.css")}}">
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/libs/aos-master/dist/aos.css")}}">
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/css/styles.css")}}" />
+    <title>Codenova</title>
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/aos-master/dist/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/css/styles.css') }}" />
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->
@@ -22,22 +22,14 @@
             <div class="container py-3">
                 <div class="sign-in card mx-auto shadow-lg">
                     <div class="card-body py-8 px-lg-5">
-                        <a href="index.html" class="mb-8 hstack justify-content-center">
-                            <img src="../assets/images/logos/logo-dark.svg" alt="logo-dark" class="img-fluid">
+                        <a href="#" class="mb-8 hstack justify-content-center">
+                            <img src="{{ asset('assets/landingPage/images/logos/Codenova_full_hitam.svg')}}" alt="logo-dark" class="img-fluid">
                         </a>
-                        <div class="hstack gap-3">
-                            <a href="javascript:void(0)"
-                                class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">Sign
-                                In <img src="../assets/images/svgs/icon-google.svg" alt="google" class="img-fluid"></a>
-                            <a href="javascript:void(0)"
-                                class="btn btn-outline-light bg-white px-3 py-2 fs-4 text-dark w-50 fw-medium hstack gap-2 lh-lg justify-content-center">Sign
-                                In <img src="../assets/images/svgs/icon-github.svg" alt="google" class="img-fluid"></a>
-                        </div>
                         <div class="position-relative hstack justify-content-center">
                             <hr class="my-8 w-100 d-block">
-                            <p class="mb-0 fs-3 bg-body px-3 position-absolute top-50 start-50 translate-middle">OR</p>
+                            <p class="mb-0 fs-3 bg-body px-3 position-absolute top-50 start-50 translate-middle">Sign in dengan email</p>
                         </div>
-                        <form class="d-flex flex-column gap-3">
+                        <form class="d-flex flex-column gap-3" action="{{ route('login.auth') }}" method="POST">
                             <div>
                                 <input type="email" class="form-control border-bottom" id="exampleInputEmail1"
                                     placeholder="Email" aria-describedby="emailHelp">
@@ -47,14 +39,13 @@
                                     placeholder="Password">
                             </div>
 
-                            <a href="index.html"
+                            <button type="submit"
                                 class="btn btn-dark w-100 justify-content-center py-2 fw-medium my-7 fs-4 lh-lg">
                                 Sign In
-                            </a>
+                            </button>
                         </form>
-                        <a class="text-center mb-1 d-block text-dark fw-medium" href="#">Forget Password?</a>
-                        <p class="mb-0 fw-medium text-center">Not a member yet? <a class="text-dark"
-                                href="sign-up.html">Sign Up</a>
+                        <p class="mb-0 fw-medium text-center">Belum punya akun? <a class="text-dark"
+                                href="{{ route('register') }}">Sign Up</a>
                         </p>
                     </div>
                 </div>
@@ -63,13 +54,6 @@
 
     </div>
 
-    <div class="get-template hstack gap-2">
-
-        <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
-            id="scrollToTopBtn">
-            <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
-        </button>
-    </div>
     <!-- Required Js -->
     <script src="{{ asset('assets/landingPage/libs/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{ asset('assets/landingPage/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>

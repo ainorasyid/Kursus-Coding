@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="about-us.html" class="btn" data-aos="fade-up" data-aos-delay="500"
+                    <a href="{{route('about')}}" class="btn" data-aos="fade-up" data-aos-delay="500"
                         data-aos-duration="1000">
                         <span class="btn-text">Who we are</span>
                         <iconify-icon icon="lucide:arrow-up-right"

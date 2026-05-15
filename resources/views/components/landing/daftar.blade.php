@@ -28,14 +28,14 @@
                         Mulailah perjalanan coding anda hari ini. Kami siap membantu anda belajar dari dasar.</p>
                 </div>
                 <div class="col-xl-8">
-                    <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200"
+                    <a href="{{ route('register') }}" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200"
                         data-aos-duration="1000">
                         <div class="btn w-100 justify-content-center">
-                            <a href="{{ route('register') }}" class="btn-text">Daftar Sekarang</a>
+                            <span class="btn-text">Daftar Sekarang</span>
                             <iconify-icon icon="lucide:arrow-up-right"
                                 class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

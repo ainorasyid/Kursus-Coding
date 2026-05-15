@@ -11,8 +11,8 @@
                     <li><a class="link-hover fs-5 text-white" href="{{ ('/') }}">Home</a></li>
                     <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
                     <li><a class="link-hover fs-5 text-white" id="services" href="#services">Services</a></li>
-                    <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Terms</a></li>
-                    <li><a class="link-hover fs-5 text-white" href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="link-hover fs-5 text-white" href="#">Terms</a></li>
+                    <li><a class="link-hover fs-5 text-white" href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
@@ -23,10 +23,9 @@
                 </ul>
             </div>
             <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
-                <p class="mb-0 text-white text-opacity-70 text-md-end">© Studiova copyright 2025</p>
+                <p class="mb-0 text-white text-opacity-70 text-md-end">© Codenova copyright 2025</p>
             </div>
         </div>
     </div>
-    <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white"
-            href="https://www.themewagon.com" target="_blank">ThemeWagon</a></p>
+    <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <span class="text-white">Group 6</span></p>
 </footer>

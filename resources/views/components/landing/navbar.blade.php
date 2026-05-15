@@ -2,11 +2,11 @@
     <div class="container">
         <div class="header-wrapper d-flex align-items-center justify-content-between">
             <div class="logo">
-                <a href="index.html" class="logo-white">
+                <a href="{{ route('landing') }}" class="logo-white">
                     <img src="{{ asset('assets/landingPage/images/logos/Codenova full putih.svg')}}" alt="logo"
                         class="img-fluid">
                 </a>
-                <a href="index.html" class="logo-dark">
+                <a href="{{ route('landing') }}" class="logo-dark">
                     <img src="{{ asset('assets/landingPage/images/logos/Codenova_full_hitam.svg')}}" alt="logo" class="img-fluid">
                 </a>
             </div>
@@ -29,13 +29,13 @@
                                 <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
                                     <li class="header-item">
                                         <a href="{{ route('landing') }}" aria-current="true"
-                                            class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
+                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark {{ request()->routeIs('landing') ? 'active' : '' }}"><img
                                                 src="{{ asset('assets/landingPage/images/svgs/secondary-leaf.svg')}}"
                                                 alt="" width="20" height="20" class="img-fluid animate-spin">Home</a>
                                     </li>
                                     <li class="header-item">
-                                        <a href="about-us.html"
-                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                                        <a href="{{ route('about') }}"
+                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark {{ request()->routeIs('about') ? 'active' : '' }}"><img
                                                 src="{{ asset('assets/landingPage/images/svgs/secondary-leaf.svg')}}"
                                                 alt="" width="20" height="20" class="img-fluid animate-spin">About</a>
                                     </li>
@@ -48,7 +48,7 @@
                                     </li>
                                     <li class="header-item">
                                         <a href="{{ route('contact') }}"
-                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark {{ request()->routeIs('contact') ? 'active' : '' }}"><img
                                                 src="{{ asset('assets/landingPage/images/svgs/secondary-leaf.svg')}}"
                                                 alt="" width="20" height="20" class="img-fluid animate-spin">Contact</a>
                                     </li>

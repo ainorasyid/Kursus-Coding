@@ -1,166 +1,73 @@
 <!doctype html>
-<html lang="en" data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" dir="ltr"
-    data-pc-theme="light">
-<!-- [Head] start -->
+<html lang="en">
 
 <head>
-    <title>Register | Kursus Si Ireng</title>
-    <!-- [Meta] -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Datta Able is trending dashboard template made using Bootstrap 5 design framework. Datta Able is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies." />
-    <meta name="keywords"
-        content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard" />
-    <meta name="author" content="CodedThemes" />
-
-    <!-- [Font] Family -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
-    <!-- [phosphor Icons] https://phosphoricons.com/ -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/fonts/phosphor/duotone/style.css')}}" />
-    <!-- [Tabler Icons] https://tablericons.com -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/fonts/tabler-icons.min.css')}}" />
-    <!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/fonts/feather.css')}}" />
-    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/fonts/fontawesome.css')}}" />
-    <!-- [Material Icons] https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/fonts/material.css')}}" />
-    <!-- [Template CSS Files] -->
-    <link rel="stylesheet" href="{{ asset('assets/dashboard/css/style.css')}}" id="main-style-link" />
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codenova</title>
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/aos-master/dist/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/landingPage/css/styles.css') }}" />
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->
 
 <body>
-    <a href="{{ route('landing') }}"
-    class="fixed flex z-50 items-center gap-2 rounded-lg bg-white px-4 py-2 shadow-md hover:shadow-lg transition"
-    style="top: 30px; left: 30px;">
-        <i data-feather="arrow-left" class="w-5 h-5"></i>
-        <span class="text-sm font-medium">Back</span>
-    </a>
-    <!-- [ Pre-loader ] start -->
-    <div class="loader-bg fixed inset-0 bg-white dark:bg-themedark-cardbg z-[1034]">
-        <div class="loader-track h-[5px] w-full inline-block absolute overflow-hidden top-0">
-            <div
-                class="loader-fill w-[300px] h-[5px] bg-primary-500 absolute top-0 left-0 animate-[hitZak_0.6s_ease-in-out_infinite_alternate]">
-            </div>
-        </div>
-    </div>
-    <!-- [ Pre-loader ] End -->
+    
+  <div class="page-wrapper overflow-hidden">
 
-    <div class="auth-main relative">
-        <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen">
-            <div class="auth-form flex items-center justify-center grow flex-col min-h-screen relative p-6 ">
-                <div class="w-full max-w-[350px] relative">
-                    <div class="auth-bg ">
-                        <span
-                            class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
-                        <span
-                            class="absolute top-[150px] right-[-150px] w-5 h-5 block rounded-full bg-primary-500 animate-[floating_9s_infinite]"></span>
-                        <span
-                            class="absolute left-[-150px] bottom-[150px] w-5 h-5 block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
-                        <span
-                            class="absolute left-[-100px] bottom-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-2 animate-[floating_9s_infinite]"></span>
-                    </div>
-                    <div class="card sm:my-12  w-full shadow-none">
-                        <div class="card-body !p-10">
-                            <h4 class="text-center font-medium mb-4">Sign up</h4>
-                            <form action="{{ route('register.store') }}" method="POST">
-                                @csrf
-                                <div class="grid grid-cols-12 gap-3 mb-3">
-                                    <div class="col-span-12 sm:col-span-6">
-                                        <input type="text" class="form-control @error('firstName') border-red-500 @else border-gray-300 @enderror" placeholder="First Name" name="firstName" >
-                                        @error('firstName')
-                                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <div class="col-span-12 sm:col-span-6">
-                                        <input type="text" class="form-control @error('lastName') border-red-500 @else border-gray-300 @enderror" placeholder="Last Name" name="lastName" >
-                                        @error('lastName')
-                                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control @error('email') border-red-500 @else border-gray-300 @enderror" placeholder="Email Address" name="email" >
-                                    @error('email')
-                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <input type="password" class="form-control @error('password') border-red-500 @else border-gray-300 @enderror" placeholder="Password" name="password" >
-                                    @error('password')
-                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="mb-4">
-                                    <input type="password" class="form-control @error('password_confirmation') border-red-500 @else border-gray-300 @enderror" placeholder="Confirm Password" name="confirmPass" >
-                                    @error('confirmPass')
-                                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="mt-4 text-center">
-                                    <button type="submit" class="btn btn-primary mx-auto shadow-2xl">Sign up</button>
-                                </div>
-                            </form>
-                            <div class="flex justify-between items-end flex-wrap mt-4">
-                                <h6 class="font-medium mb-0">Already have an Account?</h6>
-                                <a href="{{ route('login') }}" class="text-primary-500">Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--  Get in touch Section -->
+    <section
+      class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
+      <div class="container py-3">
+        <div class="sign-in card mx-auto shadow-lg">
+          <div class="card-body py-8 px-lg-5">
+            <a href="#" class="mb-8 hstack justify-content-center">
+              <img src="{{ asset('assets/landingPage/images/logos/Codenova_full_hitam.svg')}}" alt="logo-dark" class="img-fluid">
+            </a>
+            <div class="position-relative hstack justify-content-center">
+              <hr class="my-8 w-100 d-block">
+              <p class="mb-0 fs-3 bg-body px-3 position-absolute top-50 start-50 translate-middle">Daftar dengan email</p>
             </div>
+            <form class="d-flex flex-column gap-3">
+              <div>
+                <input type="text" id="disabledTextInput" class="form-control border-bottom" placeholder="First Name">
+              </div>
+              <div>
+                <input type="text" id="disabledTextInput" class="form-control border-bottom" placeholder="Last Name">
+              </div>
+              <div>
+                <input type="email" class="form-control border-bottom" id="exampleInputEmail1" placeholder="Email"
+                  aria-describedby="emailHelp">
+              </div>
+              <div>
+                <input type="password" class="form-control border-bottom" id="inputPassword" placeholder="Password">
+              </div>
+
+              <a href="sign-in.html" class="btn btn-dark w-100 justify-content-center py-2 fw-medium my-7 fs-4 lh-lg">
+                Sign Up
+              </a>
+            </form>
+            <p class="text-center mb-1 d-block fw-medium">By creating an account, you agree with our <span
+                class="text-dark" >Privacy</span> and <span class="text-dark">Policy</span>.</p>
+            <p class="mb-0 fw-medium text-center">Sudah mempunyai akun? <a class="text-dark" href="{{ route('login') }}">Sign
+                In</a>
+            </p>
+          </div>
         </div>
-    </div>
-    <!-- [ Main Content ] end -->
+      </div>
+    </section>
+
+  </div>
+    
     <!-- Required Js -->
-    <script src="{{ asset('assets/dashboard/js/plugins/simplebar.min.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/plugins/popper.min.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/icon/custom-icon.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/plugins/feather.min.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/component.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/theme.js')}}"></script>
-    <script src="{{ asset('assets/dashboard/js/script.js')}}"></script>
-
-    <div class="floting-button fixed bottom-[50px] right-[30px] z-[1030]">
-    </div>
-
-
-    <script>
-        layout_change('false');
-    </script>
-
-
-    <script>
-        layout_theme_sidebar_change('dark');
-    </script>
-
-
-    <script>
-        change_box_container('false');
-    </script>
-
-    <script>
-        layout_caption_change('true');
-    </script>
-
-    <script>
-        layout_rtl_change('false');
-    </script>
-
-    <script>
-        preset_change('preset-1');
-    </script>
-
-    <script>
-        main_layout_change('vertical');
-    </script>
-
+    <script src="{{ asset('assets/landingPage/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/landingPage/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/landingPage/libs/owl.carousel/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('assets/landingPage/libs/aos-master/dist/aos.js')}}"></script>
+    <script src="{{ asset('assets/landingPage/js/custom.js')}}"></script>
+    <!-- solar icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
 </body>
 <!-- [Body] end -->
