@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codenova</title>
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/libs/owl.carousel/dist/assets/owl.carousel.min.css")}}">
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/libs/aos-master/dist/aos.css")}}">
-    <link rel="stylesheet" href="{{ asset("assets/landingPage/css/styles.css")}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codenova</title>
+  <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/landingPage/libs/aos-master/dist/aos.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/landingPage/css/styles.css') }}" />
 </head>
 
 <body>
@@ -20,17 +20,18 @@
   <div class="page-wrapper overflow-hidden">
 
     <!--  Banner Section -->
-    <section
-    class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-    style="background-image: url('{{ asset('assets/landingPage/images/backgrounds/aboutus-banner.jpg') }}')">
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+      style="background-image: url('{{ asset('assets/landingPage/images/backgrounds/aboutus-banner.jpg') }}')">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
           <div class="row align-items-center">
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-               <img src="{{ asset('assets/landingPage/images/svgs/primary-leaf.svg')}}" alt="" class="img-fluid animate-spin">
-                 <p class="mb-0 text-white fs-5 text-opacity-70">Kami menyediakan <span class="text-primary">pembelajaran pemrograman </span> meningkatkan skill digital dan membuka peluang masa depan. </p>
+                <img src="{{ asset('assets/landingPage/images/svgs/primary-leaf.svg')}}" alt=""
+                  class="img-fluid animate-spin">
+                <p class="mb-0 text-white fs-5 text-opacity-70">Kami menyediakan <span class="text-primary">pembelajaran
+                    pemrograman </span> meningkatkan skill digital dan membuka peluang masa depan. </p>
               </div>
             </div>
           </div>
@@ -58,15 +59,21 @@
               <div class="d-flex flex-column gap-4 gap-lg-5" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1000">
                 <p class="mb-0 fs-5 text-dark" style="text-align: justify;">
-                 Codenova hadir sebagai tempat untuk belajar, berkembang, dan melatih skill digital secara mudah dan fleksibel.
-                 Kami percaya bahwa kemampuan coding adalah keterampilan penting di era modern, sehingga siapa saja berhak mendapatkan akses
-                 pembelajaran yang berkualitas tanpa biaya. Melalui materi yang interaktif dan mudah dipahami, peserta dapat mempelajari
-                 dasar pemrograman, pengembangan web, hingga berbagai teknologi yang digunakan di dunia kerja saat ini.
+                  Codenova hadir sebagai tempat untuk belajar, berkembang, dan melatih skill digital secara mudah dan
+                  fleksibel.
+                  Kami percaya bahwa kemampuan coding adalah keterampilan penting di era modern, sehingga siapa saja
+                  berhak mendapatkan akses
+                  pembelajaran yang berkualitas tanpa biaya. Melalui materi yang interaktif dan mudah dipahami, peserta
+                  dapat mempelajari
+                  dasar pemrograman, pengembangan web, hingga berbagai teknologi yang digunakan di dunia kerja saat ini.
                 </p>
                 <p class="mb-0 fs-5 text-dark" style="text-align: justify;">
-                  Tidak hanya belajar teori, Anda juga akan diajak untuk berlatih secara langsung melalui berbagai proyek dan latihan
-                  yang membantu meningkatkan kemampuan problem solving dan kreativitas. Dengan suasana belajar yang fleksibel dan
-                  terus berkembang, Kursus Coding Gratis menjadi wadah untuk membangun skill, menambah pengalaman, dan mempersiapkan
+                  Tidak hanya belajar teori, Anda juga akan diajak untuk berlatih secara langsung melalui berbagai
+                  proyek dan latihan
+                  yang membantu meningkatkan kemampuan problem solving dan kreativitas. Dengan suasana belajar yang
+                  fleksibel dan
+                  terus berkembang, Kursus Coding Gratis menjadi wadah untuk membangun skill, menambah pengalaman, dan
+                  mempersiapkan
                   diri menghadapi dunia digital yang terus berubah.
                 </p>
               </div>
@@ -78,7 +85,8 @@
                 <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="45">100</span>+</h2>
                 <div class="d-flex flex-column gap-3">
                   <h4 class="mb-0">Materi Kursus Gratis</h4>
-                  <p class="mb-0" style="text-align: justify;">Berbagai materi pembelajaran coding dan teknologi tersedia secara gratis dengan
+                  <p class="mb-0" style="text-align: justify;">Berbagai materi pembelajaran coding dan teknologi
+                    tersedia secara gratis dengan
                     pembahasan yang mudah dipahami untuk semua kalangan.</p>
                 </div>
               </div>
@@ -88,7 +96,8 @@
                 <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="15">50</span>+</h2>
                 <div class="d-flex flex-column gap-3">
                   <h4 class="mb-0">Video Pembelajaran Interaktif</h4>
-                  <p class="mb-0" style="text-align: justify;">Belajar menjadi lebih mudah melalui video pembelajaran yang membantu
+                  <p class="mb-0" style="text-align: justify;">Belajar menjadi lebih mudah melalui video pembelajaran
+                    yang membantu
                     peserta memahami materi secara bertahap dan fleksibel.</p>
                 </div>
               </div>
@@ -98,7 +107,8 @@
                 <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="158">200</span>+</h2>
                 <div class="d-flex flex-column gap-3">
                   <h4 class="mb-0">Quiz & Evaluasi Skill</h4>
-                  <p class="mb-0" style="text-align: justify;">Tersedia quiz dan evaluasi untuk membantu mengukur pemahaman serta meningkatkan
+                  <p class="mb-0" style="text-align: justify;">Tersedia quiz dan evaluasi untuk membantu mengukur
+                    pemahaman serta meningkatkan
                     kemampuan selama proses belajar.</p>
                 </div>
               </div>
@@ -231,15 +241,15 @@
 
 
 
-  <x-landing.footer></x-landing.footer>
+    <x-landing.footer></x-landing.footer>
 
-  <div class="get-template hstack gap-2">
-    
-    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
-      id="scrollToTopBtn">
-      <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
-    </button>
-  </div>
+    <div class="get-template hstack gap-2">
+
+      <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
+        id="scrollToTopBtn">
+        <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
+      </button>
+    </div>
 
 
     <script src="{{ asset('assets/landingPage/libs/jquery/dist/jquery.min.js')}}"></script>
