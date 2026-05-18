@@ -27,5 +27,4 @@
             </div>
         </div>
     </div>
-    <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <span class="text-white">Group 6</span></p>
 </footer>

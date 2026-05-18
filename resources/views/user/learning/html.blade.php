@@ -29,16 +29,15 @@
                 <div class="page-heading">
                     <div class="page-title">
                         <div class="row">
-                            <div class="col-12 col-md-8 order-md-1 order-last">
-                                <h1>Selamat datang {{ auth()->user()->pengguna->fullname }}!</h1>
-                                <p class="text-subtitle text-muted">Semoga aktivitas belajarmu menyenangkan.</p>
+                            <div class="col-12 order-md-1 order-last mb-4">
+                                <h1>HTML (HyperText Markup Language)</h1>
                             </div>
                         </div>
                     </div>
                     <section class="section">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Belajar dasar bahasa pemograman bersama kami</h4>
+                                <h4 class="card-title">Apa itu html?</h4>
                             </div>
                             <div class="card-body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quas omnis

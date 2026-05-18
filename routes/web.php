@@ -5,7 +5,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\mentor\DashboardController as MentorDashboard;
-use App\Http\Controllers\user\DashboardController as UserDashboard;
 
 Route::get('/', function () {
     return view('index');
@@ -30,4 +29,4 @@ Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.da
 
 Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])->name('mentor.dashboard');
 
-Route::get('/user/dashboard', [UserDashboard::class, 'index'])->name('user.dashboard');
+require __DIR__ . '/role/user.php';

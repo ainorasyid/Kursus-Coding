@@ -16,7 +16,7 @@
     <x-landing.navbar></x-landing.navbar>
 
     <!--  Page Wrapper -->
-    <div class="page-wrapper overflow-hidden">
+    <div class="page-wrapper overflow-hidden"> 
 
         <!--  Banner Section -->
         <x-landing.banner></x-landing.banner>

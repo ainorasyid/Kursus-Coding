@@ -6,18 +6,22 @@ return [
             'title' => 'Dashboard',
             'icon' => 'bi bi-grid-fill',
             'route' => 'admin.dashboard',
+            'active' => 'admin.dashboard',
         ],
         [
             'title' => 'Management',
             'icon' => 'bi bi-people-fill',
+            'active' => 'admin.management.*',
             'submenu' => [
                 [
                     'title' => 'Kelola User',
                     'url' => '#',
+                    'active' => 'admin.management.users',
                 ],
                 [
                     'title' => 'Kelola Mentor',
                     'url' => '#',
+                    'active' => 'admin.management.mentors',
                 ],
             ],
         ],
@@ -28,14 +32,17 @@ return [
             'title' => 'Dashboard',
             'icon' => 'bi bi-grid-fill',
             'route' => 'mentor.dashboard',
+            'active' => 'mentor.dashboard',
         ],
         [
             'title' => 'Materi',
             'icon' => 'bi bi-book-fill',
+            'active' => 'mentor.material.*',
             'submenu' => [
                 [
                     'title' => 'Kelola Materi',
                     'url' => '#',
+                    'active' => 'mentor.material.index',
                 ],
             ],
         ],
@@ -46,18 +53,37 @@ return [
             'title' => 'Dashboard',
             'icon' => 'bi bi-grid-fill',
             'route' => 'user.dashboard',
+            'active' => 'user.dashboard',
         ],
         [
             'title' => 'Pembelajaran',
-            'icon' => 'bi bi-play-circle-fill',
+            'icon' => 'bi bi-book-half',
+            'active' => 'user.learning.*',
             'submenu' => [
                 [
-                    'title' => 'Video Belajar',
-                    'url' => '#',
+                    'title' => 'HTML',
+                    'url' => '/user/pembelajaran/html',
+                    'active' => 'user.learning.html',
                 ],
                 [
-                    'title' => 'Progress',
+                    'title' => 'CSS',
                     'url' => '#',
+                    'active' => 'user.learning.css',
+                ],
+                [
+                    'title' => 'Javascript',
+                    'url' => '#',
+                    'active' => 'user.learning.javascript',
+                ],
+                [
+                    'title' => 'PHP',
+                    'url' => '#',
+                    'active' => 'user.learning.php',
+                ],
+                [
+                    'title' => 'C++',
+                    'url' => '#',
+                    'active' => 'user.learning.cpp',
                 ],
             ],
         ],

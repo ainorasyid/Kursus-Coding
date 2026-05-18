@@ -12,6 +12,6 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $total = Pengguna::count();
-        return view('user.dashboard', ['user' => $user, 'total' => $total]);
+        return view('user.dashboard', compact('user', 'total'));
     }
 }
