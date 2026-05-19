@@ -174,32 +174,32 @@
                 </section>
 
                 <!-- Contoh HTML -->
-<section class="section">
+                <section class="section">
 
-    <div class="card">
+                    <div class="card">
 
-        <div class="card-header">
-            <h4 class="card-title">
-                Contoh Dasar HTML
-            </h4>
-        </div>
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                Contoh Dasar HTML
+                            </h4>
+                        </div>
 
-        <div class="card-body">
+                        <div class="card-body">
 
-            <!-- Penjelasan -->
-            <p>
-                Berikut adalah contoh struktur dasar HTML sederhana
-                beserta penjelasan dan hasil outputnya.
-            </p>
+                            <!-- Penjelasan -->
+                            <p>
+                                Berikut adalah contoh struktur dasar HTML sederhana
+                                beserta penjelasan dan hasil outputnya.
+                            </p>
 
-            <!-- Code -->
-            <div class="mb-4">
+                            <!-- Code -->
+                            <div class="mb-4">
 
-                <h5 class="text-primary">
-                    Code HTML
-                </h5>
+                                <h5 class="text-primary">
+                                    Code HTML
+                                </h5>
 
-<pre class="bg-dark text-white p-4 rounded">
+                                <pre class="bg-dark text-white p-4 rounded">
 <code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -220,251 +220,81 @@
 </code>
 </pre>
 
-            </div>
+                            </div>
 
-            <!-- Penjelasan per code -->
-            <div class="mb-4">
+                            <!-- Penjelasan per code -->
+                            <div class="mb-4">
 
-                <h5 class="text-primary">
-                    Penjelasan Code
-                </h5>
+                                <h5 class="text-primary">
+                                    Penjelasan Code
+                                </h5>
 
-                <ul>
+                                <ul>
 
-                    <li class="mb-2">
-                        <strong>&lt;!DOCTYPE html&gt;</strong>
-                        digunakan untuk memberi tahu browser bahwa dokumen
-                        menggunakan HTML5.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;!DOCTYPE html&gt;</strong>
+                                        digunakan untuk memberi tahu browser bahwa dokumen
+                                        menggunakan HTML5.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;html&gt;</strong>
-                        merupakan tag utama yang membungkus seluruh isi HTML.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;html&gt;</strong>
+                                        merupakan tag utama yang membungkus seluruh isi HTML.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;head&gt;</strong>
-                        berisi konfigurasi website seperti title dan metadata.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;head&gt;</strong>
+                                        berisi konfigurasi website seperti title dan metadata.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;title&gt;</strong>
-                        digunakan untuk memberikan judul pada tab browser.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;title&gt;</strong>
+                                        digunakan untuk memberikan judul pada tab browser.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;body&gt;</strong>
-                        berisi seluruh konten yang tampil pada website.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;body&gt;</strong>
+                                        berisi seluruh konten yang tampil pada website.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;h1&gt;</strong>
-                        digunakan untuk membuat heading atau judul besar.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;h1&gt;</strong>
+                                        digunakan untuk membuat heading atau judul besar.
+                                    </li>
 
-                    <li class="mb-2">
-                        <strong>&lt;p&gt;</strong>
-                        digunakan untuk membuat paragraph atau teks.
-                    </li>
+                                    <li class="mb-2">
+                                        <strong>&lt;p&gt;</strong>
+                                        digunakan untuk membuat paragraph atau teks.
+                                    </li>
 
-                </ul>
+                                </ul>
 
-            </div>
+                            </div>
 
-            <!-- Output -->
-            <div>
+                            <!-- Output -->
+                            <div>
 
-                <h5 class="text-primary">
-                    Output
-                </h5>
+                                <h5 class="text-primary">
+                                    Output
+                                </h5>
 
-                <div class="border rounded p-4 bg-light">
+                                <div class="border rounded p-4 bg-light">
 
-                    <h1>Hello World</h1>
+                                    <h1>Hello World</h1>
 
-                    <p>
-                        Saya sedang belajar HTML
-                    </p>
+                                    <p>
+                                        Saya sedang belajar HTML
+                                    </p>
 
-                </div>
+                                </div>
 
-            </div>
+                            </div>
 
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-</section>
-<!-- Contoh 2 -->
-<section class="section">
-
-    <div class="card">
-
-        <div class="card-header">
-            <h4 class="card-title">
-                Contoh Membuat Link
-            </h4>
-        </div>
-
-        <div class="card-body">
-
-            <p>
-                Berikut contoh penggunaan tag link pada HTML.
-            </p>
-
-            <!-- Code -->
-            <div class="mb-4">
-
-                <h5 class="text-primary">
-                    Code HTML
-                </h5>
-
-<pre class="bg-dark text-white p-4 rounded">
-<code>
-&lt;a href="https://google.com"&gt;
-    Kunjungi Google
-&lt;/a&gt;
-</code>
-</pre>
-
-            </div>
-
-            <!-- Penjelasan -->
-            <div class="mb-4">
-
-                <h5 class="text-primary">
-                    Penjelasan Code
-                </h5>
-
-                <ul>
-
-                    <li class="mb-2">
-                        <strong>&lt;a&gt;</strong>
-                        digunakan untuk membuat link atau tautan.
-                    </li>
-
-                    <li class="mb-2">
-                        <strong>href</strong>
-                        merupakan atribut untuk menentukan tujuan link.
-                    </li>
-
-                    <li class="mb-2">
-                        Teks
-                        <strong>Kunjungi Google</strong>
-                        merupakan tulisan yang akan tampil pada website.
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <!-- Output -->
-            <div>
-
-                <h5 class="text-primary">
-                    Output
-                </h5>
-
-                <div class="border rounded p-4 bg-light">
-
-                    <a href="#">
-                        Kunjungi Google
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- Contoh 3 -->
-<section class="section">
-
-    <div class="card">
-
-        <div class="card-header">
-            <h4 class="card-title">
-                Contoh Menampilkan Gambar
-            </h4>
-        </div>
-
-        <div class="card-body">
-
-            <p>
-                Berikut contoh penggunaan tag image pada HTML.
-            </p>
-
-            <!-- Code -->
-            <div class="mb-4">
-
-                <h5 class="text-primary">
-                    Code HTML
-                </h5>
-
-<pre class="bg-dark text-white p-4 rounded">
-<code>
-&lt;img src="gambar.jpg" width="200"&gt;
-</code>
-</pre>
-
-            </div>
-
-            <!-- Penjelasan -->
-            <div class="mb-4">
-
-                <h5 class="text-primary">
-                    Penjelasan Code
-                </h5>
-
-                <ul>
-
-                    <li class="mb-2">
-                        <strong>&lt;img&gt;</strong>
-                        digunakan untuk menampilkan gambar pada website.
-                    </li>
-
-                    <li class="mb-2">
-                        <strong>src</strong>
-                        digunakan untuk menentukan lokasi gambar.
-                    </li>
-
-                    <li class="mb-2">
-                        <strong>width</strong>
-                        digunakan untuk mengatur ukuran lebar gambar.
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <!-- Output -->
-            <div>
-
-                <h5 class="text-primary">
-                    Output
-                </h5>
-
-                <div class="border rounded p-4 bg-light">
-
-                    <img
-                        src="https://via.placeholder.com/200"
-                        class="img-fluid rounded">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+                </section>
 
                 <!-- Tombol Quiz -->
                 <section class="section">

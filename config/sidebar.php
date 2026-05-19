@@ -67,7 +67,7 @@ return [
                 ],
                 [
                     'title' => 'CSS',
-                    'url' => '#',
+                    'url' => '/user/css',
                     'active' => 'user.learning.css',
                 ],
                 [

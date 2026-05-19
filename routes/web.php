@@ -75,7 +75,9 @@ Route::get('/user/materi/html/link-image', function () {
 Route::get('/quiz/html/1', function () {
     return view('user.quiz.html.quiz1');
 });
-
+Route::get('/user/css', function () {
+    return view('user.learning.css');
+});
 
 // ==================== USER ROLE ====================
 
