@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - materi html</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/css/bootstrap.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/iconly/bold.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/css/app.css') }}">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <x-sidebar></x-sidebar>
+
+        <div id="main" class="layout-navbar">
+
+            <x-user.navbar></x-user.navbar>
+
+            <div id="main-content">
+
+                <!-- Heading -->
+                <div class="page-heading">
+
+                    <div class="page-title mb-4">
+
+                        <div class="row">
+
+                            <div class="col-12 col-md-6">
+
+                                <h3>Pengenalan HTML</h3>
+
+                                <p class="text-subtitle text-muted">
+                                    Pelajari dasar HTML untuk membuat website.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Materi -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Apa itu HTML?
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <p>
+                                HTML atau HyperText Markup Language adalah bahasa markup
+                                yang digunakan untuk membuat struktur sebuah website.
+                                HTML menjadi pondasi utama dalam pengembangan web karena
+                                semua halaman website dibuat menggunakan HTML.
+                            </p>
+
+                            <p>
+                                Dengan HTML, kita dapat menampilkan teks, gambar, video,
+                                tabel, tombol, link, dan berbagai elemen lainnya pada browser.
+                            </p>
+
+                            <div class="alert alert-primary">
+
+                                <i class="bi bi-lightbulb-fill"></i>
+
+                                HTML bukan bahasa pemrograman, tetapi bahasa markup
+                                untuk menyusun struktur halaman website.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Fungsi HTML -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Fungsi HTML
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>
+                                    Membuat struktur halaman website
+                                </li>
+
+                                <li>
+                                    Menampilkan teks dan gambar
+                                </li>
+
+                                <li>
+                                    Membuat form login dan register
+                                </li>
+
+                                <li>
+                                    Menghubungkan halaman menggunakan link
+                                </li>
+
+                                <li>
+                                    Menampilkan video dan audio
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Kenapa Penting -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Kenapa HTML Penting Dipelajari?
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <p>
+                                HTML merupakan dasar utama dalam pembuatan website.
+                                Sebelum mempelajari CSS, JavaScript, atau framework
+                                seperti Laravel dan React, seseorang wajib memahami
+                                HTML terlebih dahulu.
+                            </p>
+
+                            <p>
+                                Dengan memahami HTML, proses belajar web development
+                                akan menjadi lebih mudah karena kita memahami bagaimana
+                                sebuah halaman website dibangun.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Contoh HTML -->
+<section class="section">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h4 class="card-title">
+                Contoh Dasar HTML
+            </h4>
+        </div>
+
+        <div class="card-body">
+
+            <!-- Penjelasan -->
+            <p>
+                Berikut adalah contoh struktur dasar HTML sederhana
+                beserta penjelasan dan hasil outputnya.
+            </p>
+
+            <!-- Code -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Code HTML
+                </h5>
+
+<pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Belajar HTML&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;Saya sedang belajar HTML&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code>
+</pre>
+
+            </div>
+
+            <!-- Penjelasan per code -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Penjelasan Code
+                </h5>
+
+                <ul>
+
+                    <li class="mb-2">
+                        <strong>&lt;!DOCTYPE html&gt;</strong>
+                        digunakan untuk memberi tahu browser bahwa dokumen
+                        menggunakan HTML5.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;html&gt;</strong>
+                        merupakan tag utama yang membungkus seluruh isi HTML.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;head&gt;</strong>
+                        berisi konfigurasi website seperti title dan metadata.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;title&gt;</strong>
+                        digunakan untuk memberikan judul pada tab browser.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;body&gt;</strong>
+                        berisi seluruh konten yang tampil pada website.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;h1&gt;</strong>
+                        digunakan untuk membuat heading atau judul besar.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>&lt;p&gt;</strong>
+                        digunakan untuk membuat paragraph atau teks.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Output -->
+            <div>
+
+                <h5 class="text-primary">
+                    Output
+                </h5>
+
+                <div class="border rounded p-4 bg-light">
+
+                    <h1>Hello World</h1>
+
+                    <p>
+                        Saya sedang belajar HTML
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Contoh 2 -->
+<section class="section">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h4 class="card-title">
+                Contoh Membuat Link
+            </h4>
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Berikut contoh penggunaan tag link pada HTML.
+            </p>
+
+            <!-- Code -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Code HTML
+                </h5>
+
+<pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;a href="https://google.com"&gt;
+    Kunjungi Google
+&lt;/a&gt;
+</code>
+</pre>
+
+            </div>
+
+            <!-- Penjelasan -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Penjelasan Code
+                </h5>
+
+                <ul>
+
+                    <li class="mb-2">
+                        <strong>&lt;a&gt;</strong>
+                        digunakan untuk membuat link atau tautan.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>href</strong>
+                        merupakan atribut untuk menentukan tujuan link.
+                    </li>
+
+                    <li class="mb-2">
+                        Teks
+                        <strong>Kunjungi Google</strong>
+                        merupakan tulisan yang akan tampil pada website.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Output -->
+            <div>
+
+                <h5 class="text-primary">
+                    Output
+                </h5>
+
+                <div class="border rounded p-4 bg-light">
+
+                    <a href="#">
+                        Kunjungi Google
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Contoh 3 -->
+<section class="section">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h4 class="card-title">
+                Contoh Menampilkan Gambar
+            </h4>
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Berikut contoh penggunaan tag image pada HTML.
+            </p>
+
+            <!-- Code -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Code HTML
+                </h5>
+
+<pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;img src="gambar.jpg" width="200"&gt;
+</code>
+</pre>
+
+            </div>
+
+            <!-- Penjelasan -->
+            <div class="mb-4">
+
+                <h5 class="text-primary">
+                    Penjelasan Code
+                </h5>
+
+                <ul>
+
+                    <li class="mb-2">
+                        <strong>&lt;img&gt;</strong>
+                        digunakan untuk menampilkan gambar pada website.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>src</strong>
+                        digunakan untuk menentukan lokasi gambar.
+                    </li>
+
+                    <li class="mb-2">
+                        <strong>width</strong>
+                        digunakan untuk mengatur ukuran lebar gambar.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Output -->
+            <div>
+
+                <h5 class="text-primary">
+                    Output
+                </h5>
+
+                <div class="border rounded p-4 bg-light">
+
+                    <img
+                        src="https://via.placeholder.com/200"
+                        class="img-fluid rounded">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+                <!-- Tombol Quiz -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="mb-3">
+                                Sudah memahami materi?
+                            </h5>
+
+                            <a href="/quiz/html/1"
+                                class="btn btn-primary btn-lg">
+
+                                <i class="bi bi-patch-question-fill"></i>
+
+                                Mulai Quiz
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+    <x-footer></x-footer>
+    <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="{{ asset('assets/dashboard/vendors/apexcharts/apexcharts.js') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
+
+    <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+</body>
+
+</html>

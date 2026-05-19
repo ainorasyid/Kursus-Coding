@@ -18,15 +18,65 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+
+// ==================== LOGIN ====================
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+Route::post('/login', [LoginController::class, 'authenticate'])
+    ->name('login.auth');
 
-Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])
+    ->name('logout');
 
-Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])->name('mentor.dashboard');
+
+// ==================== REGISTER ====================
+
+Route::get('/register', [RegisterController::class, 'index'])
+    ->name('register');
+
+Route::post('/register', [RegisterController::class, 'store'])
+    ->name('register.store');
+
+
+// ==================== ADMIN ====================
+
+Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])
+    ->name('admin.dashboard');
+
+
+// ==================== MENTOR ====================
+
+Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])
+    ->name('mentor.dashboard');
+
+
+// ==================== MATERI HTML ====================
+
+Route::get('/user/materi/html/pengenalan', function () {
+    return view('user.materi.html.pengenalan');
+});
+
+Route::get('/user/materi/html/struktur-html', function () {
+    return view('user.materi.html.struktur-html');
+});
+
+Route::get('/user/materi/html/heading-paragraph', function () {
+    return view('user.materi.html.heading-paragraph');
+});
+
+Route::get('/user/materi/html/link-image', function () {
+    return view('user.materi.html.link-image');
+});
+
+
+// ==================== QUIZ HTML ====================
+
+Route::get('/quiz/html/1', function () {
+    return view('user.quiz.html.quiz1');
+});
+
+
+// ==================== USER ROLE ====================
 
 require __DIR__ . '/role/user.php';
