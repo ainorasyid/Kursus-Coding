@@ -49,8 +49,24 @@ Route::get('/user/materi/html/link-image', function () {
     return view('user.materi.html.link-image');
 });
 
+// ==================== MATERI CSS ====================
+Route::get('/user/materi/html/pengenalan', function () {
+    return view('user.materi.css.pengenalan');
+});
 
-// ==================== QUIZ HTML ====================
+Route::get('/user/materi/html/struktur-html', function () {
+    return view('user.materi.css.selector');
+});
+
+Route::get('/user/materi/html/heading-paragraph', function () {
+    return view('user.materi.css.property');
+});
+
+Route::get('/user/materi/html/link-image', function () {
+    return view('user.materi.css.layout');
+});
+
+// ==================== QUIZ  ====================
 
 Route::get('/quiz/html/1', function () {
     return view('user.quiz.html.quiz1');
@@ -64,9 +80,7 @@ Route::get('/quiz/html/3', function () {
 Route::get('/quiz/html/4', function () {
     return view('user.quiz.html.quiz4');
 });
-Route::get('/user/css', function () {
-    return view('user.learning.css');
-});
+
 
 // ==================== USER ROLE ====================
 

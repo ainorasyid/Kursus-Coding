@@ -72,17 +72,17 @@ return [
                 ],
                 [
                     'title' => 'Javascript',
-                    'url' => '#',
+                    'url' => '/user/pembelajaran/javascript',
                     'active' => 'user.learning.javascript',
                 ],
                 [
                     'title' => 'PHP',
-                    'url' => '#',
+                    'url' => '/user/pembelajaran/php',
                     'active' => 'user.learning.php',
                 ],
                 [
                     'title' => 'C++',
-                    'url' => '#',
+                    'url' => '/user/pembelajaran/c++',
                     'active' => 'user.learning.cpp',
                 ],
             ],
