@@ -55,6 +55,15 @@ Route::get('/user/materi/html/link-image', function () {
 Route::get('/quiz/html/1', function () {
     return view('user.quiz.html.quiz1');
 });
+Route::get('/quiz/html/2', function () {
+    return view('user.quiz.html.quiz2');
+});
+Route::get('/quiz/html/3', function () {
+    return view('user.quiz.html.quiz3');
+});
+Route::get('/quiz/html/4', function () {
+    return view('user.quiz.html.quiz4');
+});
 Route::get('/user/css', function () {
     return view('user.learning.css');
 });
