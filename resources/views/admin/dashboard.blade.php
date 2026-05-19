@@ -23,10 +23,87 @@
 
         <div id="main" class='layout-navbar'>
             <x-admin.navbar></x-admin.navbar>
+
+            <div id="main-content">
+                <div class="page-content">
+                    <section class="row">
+                        <div class="col-12 col-lg-9">
+                            <div class="row">
+                                <div class="col-6 col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body px-3 py-4-5">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="stats-icon blue">
+                                                        <i class="iconly-boldUser1"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="text-muted font-semibold">Total Users</h6>
+                                                    <h6 class="font-extrabold mb-0">{{ $total }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body px-3 py-4-5">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="stats-icon green">
+                                                        <i class="iconly-boldProfile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="text-muted font-semibold">Total Pengguna</h6>
+                                                    <h6 class="font-extrabold mb-0">{{ $totalP }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body px-3 py-4-5">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="stats-icon red">
+                                                        <i class="iconly-boldBookmark"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="text-muted font-semibold">Saved Post</h6>
+                                                    <h6 class="font-extrabold mb-0">112</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="card">
+                            <div class="card-body py-4 px-5">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-xl">
+                                        <img src="{{ asset('assets') }}/dashboard/images/faces/1.jpg" alt="Face 1">
+                                    </div>
+                                    <div class="ms-3 name">
+                                        <h5 class="font-bold">John Duck</h5>
+                                        <h6 class="text-muted mb-0">@johnducky</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                </div>
+                <x-footer></x-footer>
+            </div>
         </div>
     </div>
 
-    <x-footer></x-footer>
 
     <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>

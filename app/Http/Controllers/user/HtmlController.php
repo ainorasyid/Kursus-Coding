@@ -11,4 +11,10 @@ class HtmlController extends Controller
     {
         return view('user.learning.html');
     }
+
+    public function pengenalan()
+    {
+        return view('user.materi.html.pengenalan');
+    }
+
 }

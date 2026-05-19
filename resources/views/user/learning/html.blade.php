@@ -93,6 +93,129 @@
                     </section>
                 </div>
                 <!-- Video Pembelajaran -->
+                
+                <!-- Materi Pembelajaran -->
+                <section class="section">
+
+                    <div class="mb-4">
+                        <h3 class="text-primary">Materi Pembelajaran</h3>
+                        <p class="text-muted">
+                            Pelajari materi HTML secara bertahap mulai dari dasar hingga memahami
+                            struktur website.
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <!-- Materi 1 -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="mb-0">
+                                            1. Pengenalan HTML
+                                        </h5>
+                                        <span class="badge bg-success">
+                                            Dasar
+                                        </span>
+                                    </div>
+                                    <p class="text-muted">
+                                        Memahami pengertian HTML dan fungsi HTML dalam pembuatan website.
+                                    </p>
+                                    <a href="/user/materi/html/pengenalan"
+                                        class="btn btn-primary w-100">
+                                        Pelajari Materi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Materi 2 -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="mb-0">
+                                            2. Struktur Dasar HTML
+                                        </h5>
+                                        <span class="badge bg-primary">
+                                            Beginner
+                                        </span>
+                                    </div>
+                                    <p class="text-muted">
+                                        Belajar struktur dasar dokumen HTML seperti html, head, dan body.
+                                    </p>
+                                    <a href="/user/materi/html/struktur-html"
+                                        class="btn btn-primary w-100">
+                                        Pelajari Materi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Materi 3 -->
+                        <div class="col-md-6">
+                            <div class="card">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="mb-0">
+                                            3. Heading & Paragraph
+                                        </h5>
+
+                                        <span class="badge bg-warning">
+                                            Mudah
+                                        </span>
+                                    </div>
+
+                                    <p class="text-muted">
+                                        Memahami penggunaan heading dan paragraph pada HTML.
+                                    </p>
+
+                                    <a href="/user/materi/html/heading-paragraph"
+                                        class="btn btn-primary w-100">
+                                        Pelajari Materi
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Materi 4 -->
+                        <div class="col-md-6">
+                            <div class="card">
+
+                                <div class="card-body">
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h5 class="mb-0">
+                                            4. Link & Image
+                                        </h5>
+
+                                        <span class="badge bg-info">
+                                            Intermediate
+                                        </span>
+                                    </div>
+
+                                    <p class="text-muted">
+                                        Belajar menampilkan gambar dan membuat link pada halaman website.
+                                    </p>
+
+                                    <a href="/user/materi/html/link-image"
+                                        class="btn btn-primary w-100">
+                                        Pelajari Materi
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
                 <section class="section">
 
                     <div class="mb-4">
@@ -168,142 +291,6 @@
                                     <p class="text-muted">
                                         Belajar penggunaan heading, paragraph, dan teks pada HTML.
                                     </p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-                <!-- Materi Pembelajaran -->
-                <section class="section">
-
-                    <div class="mb-4">
-                        <h3 class="text-primary">Materi Pembelajaran</h3>
-                        <p class="text-muted">
-                            Pelajari materi HTML secara bertahap mulai dari dasar hingga memahami
-                            struktur website.
-                        </p>
-                    </div>
-
-                    <div class="row">
-
-                        <!-- Materi 1 -->
-                        <div class="col-md-6">
-                            <div class="card">
-
-                                <div class="card-body">
-
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h5 class="mb-0">
-                                            1. Pengenalan HTML
-                                        </h5>
-
-                                        <span class="badge bg-success">
-                                            Dasar
-                                        </span>
-                                    </div>
-
-                                    <p class="text-muted">
-                                        Memahami pengertian HTML dan fungsi HTML dalam pembuatan website.
-                                    </p>
-
-                                    <a href="/user/materi/html/pengenalan"
-                                        class="btn btn-primary w-100">
-                                        Pelajari Materi
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Materi 2 -->
-                        <div class="col-md-6">
-                            <div class="card">
-
-                                <div class="card-body">
-
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h5 class="mb-0">
-                                            2. Struktur Dasar HTML
-                                        </h5>
-
-                                        <span class="badge bg-primary">
-                                            Beginner
-                                        </span>
-                                    </div>
-
-                                    <p class="text-muted">
-                                        Belajar struktur dasar dokumen HTML seperti html, head, dan body.
-                                    </p>
-
-                                    <a href="/user/materi/html/struktur-html"
-                                        class="btn btn-primary w-100">
-                                        Pelajari Materi
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Materi 3 -->
-                        <div class="col-md-6">
-                            <div class="card">
-
-                                <div class="card-body">
-
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h5 class="mb-0">
-                                            3. Heading & Paragraph
-                                        </h5>
-
-                                        <span class="badge bg-warning">
-                                            Mudah
-                                        </span>
-                                    </div>
-
-                                    <p class="text-muted">
-                                        Memahami penggunaan heading dan paragraph pada HTML.
-                                    </p>
-
-                                    <a href="/user/materi/html/heading-paragraph"
-                                        class="btn btn-primary w-100">
-                                        Pelajari Materi
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Materi 4 -->
-                        <div class="col-md-6">
-                            <div class="card">
-
-                                <div class="card-body">
-
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h5 class="mb-0">
-                                            4. Link & Image
-                                        </h5>
-
-                                        <span class="badge bg-info">
-                                            Intermediate
-                                        </span>
-                                    </div>
-
-                                    <p class="text-muted">
-                                        Belajar menampilkan gambar dan membuat link pada halaman website.
-                                    </p>
-
-                                    <a href="/user/materi/html/link-image"
-                                        class="btn btn-primary w-100">
-                                        Pelajari Materi
-                                    </a>
-
                                 </div>
 
                             </div>
