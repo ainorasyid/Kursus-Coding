@@ -136,6 +136,62 @@ Route::get('/quiz/html/3', function () {
 Route::get('/quiz/html/4', function () {
     return view('user.quiz.html.quiz4');
 });
+// ==================== QUIZ c++  ====================
+
+Route::get('/quiz/cpp/1', function () {
+    return view('user.quiz.html.quiz1');
+});
+Route::get('/quiz/cpp/2', function () {
+    return view('user.quiz.cpp.quiz2');
+});
+Route::get('/quiz/cpp/3', function () {
+    return view('user.quiz.cpp.quiz3');
+});
+Route::get('/quiz/cpp/4', function () {
+    return view('user.quiz.cpp.quiz4');
+});
+// ==================== QUIZ javascript  ====================
+
+Route::get('/quiz/javascript/1', function () {
+    return view('user.quiz.javascript.quiz1');
+});
+Route::get('/quiz/javascript/2', function () {
+    return view('user.quiz.javascript.quiz2');
+});
+Route::get('/quiz/javascript/3', function () {
+    return view('user.quiz.javascript.quiz3');
+});
+Route::get('/quiz/javascript/4', function () {
+    return view('user.quiz.javascript.quiz4');
+});
+// ==================== QUIZ css  ====================
+
+Route::get('/quiz/css/1', function () {
+    return view('user.quiz.css.quiz1');
+});
+Route::get('/quiz/css/2', function () {
+    return view('user.quiz.css.quiz2');
+});
+Route::get('/quiz/css/3', function () {
+    return view('user.quiz.css.quiz3');
+});
+Route::get('/quiz/css/4', function () {
+    return view('user.quiz.css.quiz4');
+});
+// ==================== QUIZ php  ====================
+
+Route::get('/quiz/php/1', function () {
+    return view('user.quiz.php.quiz1');
+});
+Route::get('/quiz/php/2', function () {
+    return view('user.quiz.php.quiz2');
+});
+Route::get('/quiz/php/3', function () {
+    return view('user.quiz.php.quiz3');
+});
+Route::get('/quiz/php/4', function () {
+    return view('user.quiz.php.quiz4');
+});
 
 
 // ==================== USER ROLE ====================
