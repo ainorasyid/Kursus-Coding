@@ -50,19 +50,36 @@ Route::get('/user/materi/html/link-image', function () {
 });
 
 // ==================== MATERI CSS ====================
-Route::get('/user/materi/html/pengenalan', function () {
+Route::get('/user/materi/css/pengenalan', function () {
     return view('user.materi.css.pengenalan');
 });
 
-Route::get('/user/materi/html/struktur-html', function () {
+Route::get('/user/materi/css/selector', function () {
     return view('user.materi.css.selector');
 });
 
-Route::get('/user/materi/html/heading-paragraph', function () {
+Route::get('/user/materi/css/property', function () {
     return view('user.materi.css.property');
 });
 
-Route::get('/user/materi/html/link-image', function () {
+Route::get('/user/materi/css/layout', function () {
+    return view('user.materi.css.layout');
+});
+
+// ==================== MATERI Javascript ====================
+Route::get('/user/materi/css/pengenalan', function () {
+    return view('user.materi.css.pengenalan');
+});
+
+Route::get('/user/materi/css/selector', function () {
+    return view('user.materi.css.selector');
+});
+
+Route::get('/user/materi/css/property', function () {
+    return view('user.materi.css.property');
+});
+
+Route::get('/user/materi/css/layout', function () {
     return view('user.materi.css.layout');
 });
 

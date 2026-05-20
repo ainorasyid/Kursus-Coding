@@ -92,8 +92,7 @@
                         </div>
                     </section>
                 </div>
-                <!-- Video Pembelajaran -->
-                
+
                 <!-- Materi Pembelajaran -->
                 <section class="section">
 
@@ -215,7 +214,7 @@
                     </div>
 
                 </section>
-
+                <!-- Video Pembelajaran -->
                 <section class="section">
 
                     <div class="mb-4">

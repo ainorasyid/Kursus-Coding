@@ -52,9 +52,7 @@
 
                 </div>
 
-
-
-                <!-- PENGERTIAN CSS -->
+                </section><!-- PENGERTIAN CSS -->
                 <section class="section">
 
                     <div class="card">
@@ -70,33 +68,39 @@
                         <div class="card-body">
 
                             <p>
-                                CSS adalah singkatan dari
-                                <strong>Cascading Style Sheets</strong>.
+                                CSS adalah singkatan dari <strong>Cascading Style Sheets</strong>, yaitu bahasa yang digunakan untuk mengatur tampilan dan desain pada halaman website yang dibuat menggunakan HTML.
                             </p>
 
                             <p>
-                                CSS digunakan untuk mempercantik tampilan website
-                                seperti warna, ukuran teks, layout,
-                                background, animasi, dan lain sebagainya.
+                                Jika HTML berfungsi sebagai struktur utama website (kerangka), maka CSS berfungsi untuk mengatur tampilan visual seperti warna, ukuran teks, jarak antar elemen, hingga layout halaman agar lebih menarik dan rapi.
                             </p>
 
                             <p>
-                                Jika HTML digunakan untuk membuat struktur website,
-                                maka CSS digunakan untuk mengatur desain dan tampilannya.
+                                CSS juga membantu memisahkan antara konten (HTML) dan desain (CSS), sehingga kode menjadi lebih bersih, mudah dibaca, dan lebih mudah dikelola ketika dilakukan perubahan tampilan website.
                             </p>
 
                             <p>
-                                Hampir semua website modern menggunakan CSS
-                                agar tampilan website terlihat lebih menarik,
-                                profesional, dan nyaman digunakan.
+                                Fungsi utama CSS dalam pengembangan website antara lain:
+                            </p>
+
+                            <ul>
+                                <li>Mengatur warna teks, background, dan elemen website</li>
+                                <li>Mengatur ukuran, jenis, dan gaya font</li>
+                                <li>Mengatur layout halaman menggunakan flexbox dan grid</li>
+                                <li>Mengatur jarak antar elemen (margin dan padding)</li>
+                                <li>Membuat animasi dan efek transisi</li>
+                                <li>Membuat tampilan website responsif di berbagai perangkat</li>
+                            </ul>
+
+                            <p>
+                                Dengan CSS, tampilan website yang awalnya sederhana dapat diubah menjadi lebih modern, menarik, dan profesional seperti website-website yang kita gunakan saat ini.
                             </p>
 
                             <div class="alert alert-primary">
 
                                 <i class="bi bi-lightbulb-fill"></i>
 
-                                HTML adalah kerangka website,
-                                sedangkan CSS adalah desain website.
+                                <strong>Kesimpulan:</strong> HTML adalah struktur website, sedangkan CSS adalah pengatur tampilan dan desainnya.
 
                             </div>
 
@@ -105,134 +109,6 @@
                     </div>
 
                 </section>
-
-
-
-                <!-- VIDEO PEMBELAJARAN -->
-                <section class="section">
-
-                    <div class="card">
-
-                        <div class="card-header">
-
-                            <h4 class="card-title">
-                                Video Pembelajaran CSS
-                            </h4>
-
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="row">
-
-
-
-                                <!-- VIDEO 1 -->
-                                <div class="col-md-4 mb-4">
-
-                                    <div class="card border shadow-sm h-100">
-
-                                        <iframe
-                                            width="100%"
-                                            height="220"
-                                            src="https://www.youtube.com/embed/1PnVor36_40"
-                                            title="Belajar CSS Dasar"
-                                            frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
-
-                                        <div class="card-body">
-
-                                            <h5>
-                                                Pengenalan CSS
-                                            </h5>
-
-                                            <p class="text-muted">
-                                                Memahami pengertian CSS
-                                                dan fungsi CSS pada website.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VIDEO 2 -->
-                                <div class="col-md-4 mb-4">
-
-                                    <div class="card border shadow-sm h-100">
-
-                                        <iframe
-                                            width="100%"
-                                            height="220"
-                                            src="https://www.youtube.com/embed/n7vZxg9pxkg"
-                                            title="Dasar CSS"
-                                            frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
-
-                                        <div class="card-body">
-
-                                            <h5>
-                                                Dasar-Dasar CSS
-                                            </h5>
-
-                                            <p class="text-muted">
-                                                Belajar selector, property,
-                                                dan value pada CSS.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-                                <!-- VIDEO 3 -->
-                                <div class="col-md-4 mb-4">
-
-                                    <div class="card border shadow-sm h-100">
-
-                                        <iframe
-                                            width="100%"
-                                            height="220"
-                                            src="https://www.youtube.com/embed/ESnrn1kAD4E"
-                                            title="CSS Layout"
-                                            frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
-
-                                        <div class="card-body">
-
-                                            <h5>
-                                                Layout & Styling CSS
-                                            </h5>
-
-                                            <p class="text-muted">
-                                                Belajar membuat tampilan website
-                                                lebih modern menggunakan CSS.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
 
                 <!-- MATERI PEMBELAJARAN -->
                 <section class="section">
@@ -444,6 +320,129 @@
                 </section>
 
             </div>
+            <!-- VIDEO PEMBELAJARAN -->
+            <section class="section">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h4 class="card-title">
+                            Video Pembelajaran CSS
+                        </h4>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+
+
+
+                            <!-- VIDEO 1 -->
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card border shadow-sm h-100">
+
+                                    <iframe
+                                        width="100%"
+                                        height="220"
+                                        src="https://www.youtube.com/embed/1PnVor36_40"
+                                        title="Belajar CSS Dasar"
+                                        frameborder="0"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                    <div class="card-body">
+
+                                        <h5>
+                                            Pengenalan CSS
+                                        </h5>
+
+                                        <p class="text-muted">
+                                            Memahami pengertian CSS
+                                            dan fungsi CSS pada website.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- VIDEO 2 -->
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card border shadow-sm h-100">
+
+                                    <iframe
+                                        width="100%"
+                                        height="220"
+                                        src="https://www.youtube.com/embed/n7vZxg9pxkg"
+                                        title="Dasar CSS"
+                                        frameborder="0"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                    <div class="card-body">
+
+                                        <h5>
+                                            Dasar-Dasar CSS
+                                        </h5>
+
+                                        <p class="text-muted">
+                                            Belajar selector, property,
+                                            dan value pada CSS.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- VIDEO 3 -->
+                            <div class="col-md-4 mb-4">
+
+                                <div class="card border shadow-sm h-100">
+
+                                    <iframe
+                                        width="100%"
+                                        height="220"
+                                        src="https://www.youtube.com/embed/ESnrn1kAD4E"
+                                        title="CSS Layout"
+                                        frameborder="0"
+                                        allowfullscreen>
+                                    </iframe>
+
+                                    <div class="card-body">
+
+                                        <h5>
+                                            Layout & Styling CSS
+                                        </h5>
+
+                                        <p class="text-muted">
+                                            Belajar membuat tampilan website
+                                            lebih modern menggunakan CSS.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
 
