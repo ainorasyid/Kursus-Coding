@@ -66,56 +66,62 @@ Route::get('/user/materi/css/layout', function () {
     return view('user.materi.css.layout');
 });
 
-// ==================== MATERI Javascript ====================
-Route::get('/user/materi/css/pengenalan', function () {
-    return view('user.materi.css.pengenalan');
+// ==================== MATERI JAVASCRIPT ====================
+
+Route::get('/user/materi/javascript/pengenalan', function () {
+    return view('user.materi.javascript.pengenalan');
 });
 
-Route::get('/user/materi/css/selector', function () {
-    return view('user.materi.css.selector');
+Route::get('/user/materi/javascript/dom', function () {
+    return view('user.materi.javascript.dom');
 });
 
-Route::get('/user/materi/css/property', function () {
-    return view('user.materi.css.property');
+Route::get('/user/materi/javascript/variabel', function () {
+    return view('user.materi.javascript.variabel');
 });
 
-Route::get('/user/materi/css/layout', function () {
-    return view('user.materi.css.layout');
+Route::get('/user/materi/javascript/function', function () {
+    return view('user.materi.javascript.function');
 });
+
 
 // ==================== MATERI PHP ====================
-Route::get('/user/materi/css/pengenalan', function () {
-    return view('user.materi.css.pengenalan');
+
+Route::get('/user/materi/php/pengenalan', function () {
+    return view('user.materi.php.pengenalan');
 });
 
-Route::get('/user/materi/css/selector', function () {
-    return view('user.materi.css.selector');
+Route::get('/user/materi/php/percabangan', function () {
+    return view('user.materi.php.percabangan');
 });
 
-Route::get('/user/materi/css/property', function () {
-    return view('user.materi.css.property');
+Route::get('/user/materi/php/variabel', function () {
+    return view('user.materi.php.variabel');
 });
 
-Route::get('/user/materi/css/layout', function () {
-    return view('user.materi.css.layout');
+Route::get('/user/materi/php/looping', function () {
+    return view('user.materi.php.looping');
 });
+
 
 // ==================== MATERI C++ ====================
-Route::get('/user/materi/css/pengenalan', function () {
-    return view('user.materi.css.pengenalan');
+
+Route::get('/user/materi/cpp/pengenalan', function () {
+    return view('user.materi.cpp.pengenalan');
 });
 
-Route::get('/user/materi/css/selector', function () {
-    return view('user.materi.css.selector');
+Route::get('/user/materi/cpp/percabangan', function () {
+    return view('user.materi.cpp.percabangan');
 });
 
-Route::get('/user/materi/css/property', function () {
-    return view('user.materi.css.property');
+Route::get('/user/materi/cpp/variabel', function () {
+    return view('user.materi.cpp.variabel');
 });
 
-Route::get('/user/materi/css/layout', function () {
-    return view('user.materi.css.layout');
+Route::get('/user/materi/cpp/looping', function () {
+    return view('user.materi.cpp.looping');
 });
+
 // ==================== QUIZ HTML  ====================
 
 Route::get('/quiz/html/1', function () {

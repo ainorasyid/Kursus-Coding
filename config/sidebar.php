@@ -81,7 +81,7 @@ return [
                     'active' => 'user.learning.php',
                 ],
                 [
-                    'title' => 'cpp',
+                    'title' => 'c++',
                     'url' => '/user/pembelajaran/cpp',
                     'active' => 'user.learning.cpp',
                 ],
