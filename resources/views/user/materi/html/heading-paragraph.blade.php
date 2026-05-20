@@ -617,8 +617,7 @@ untuk membuat website
                                 Sudah memahami Heading & Paragraph?
                             </h5>
 
-                            <a href="/quiz/html/3"
-                                class="btn btn-primary btn-lg">
+                            <a href="/quiz/html/3" class="btn btn-primary btn-lg">
 
                                 <i class="bi bi-patch-question-fill"></i>
 

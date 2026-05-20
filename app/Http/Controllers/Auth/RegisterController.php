@@ -29,7 +29,6 @@ class RegisterController extends Controller
         $fullName = $validateData['firstName'] . ' ' . $validateData['lastName'];
 
         $user = User::create([
-            'name' => $fullName,
             'email' => $validateData['email'],
             'password' => $validateData['password'],
             'peran_id' => 3

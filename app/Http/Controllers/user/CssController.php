@@ -11,4 +11,20 @@ class CssController extends Controller
     {
         return view('user.learning.css');
     }
+    public function pengenalan()
+    {
+        return view('user.materi.css.pengenalan');
+    }
+    public function selector()
+    {
+        return view('user.materi.css.selector');
+    }
+    public function property()
+    {
+        return view('user.materi.css.property');
+    }
+    public function layout()
+    {
+        return view('user.materi.css.layout');
+    }
 }

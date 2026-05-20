@@ -41,7 +41,8 @@
                                 <h3>Pengenalan C++</h3>
 
                                 <p class="text-subtitle text-muted">
-                                    Pelajari dasar bahasa pemrograman C++ untuk membuat program dan memahami logika pemrograman.
+                                    Pelajari dasar bahasa pemrograman C++ untuk membuat program dan memahami logika
+                                    pemrograman.
                                 </p>
 
                             </div>
@@ -394,8 +395,7 @@ int main() {
                                 Sudah memahami Pengenalan C++?
                             </h5>
 
-                            <a href="/quiz/cpp/1"
-                                class="btn btn-primary btn-lg">
+                            <a href="/quiz/cpp/1" class="btn btn-primary btn-lg">
 
                                 <i class="bi bi-patch-question-fill"></i>
 
@@ -415,7 +415,7 @@ int main() {
 
     </div>
 
-            
+
     <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>
 

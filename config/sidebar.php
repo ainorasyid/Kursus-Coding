@@ -9,21 +9,11 @@ return [
             'active' => 'admin.dashboard',
         ],
         [
-            'title' => 'Management',
+            'title' => 'Management User',
             'icon' => 'bi bi-people-fill',
+            'route' => 'admin.management.user',
             'active' => 'admin.management.*',
-            'submenu' => [
-                [
-                    'title' => 'Kelola User',
-                    'url' => '#',
-                    'active' => 'admin.management.users',
-                ],
-                [
-                    'title' => 'Kelola Mentor',
-                    'url' => '#',
-                    'active' => 'admin.management.mentors',
-                ],
-            ],
+            
         ],
     ],
 
@@ -63,27 +53,27 @@ return [
                 [
                     'title' => 'HTML',
                     'url' => '/user/pembelajaran/html',
-                    'active' => 'user.learning.html',
+                    'active' => 'user.learning.html.*',
                 ],
                 [
                     'title' => 'CSS',
                     'url' => '/user/pembelajaran/css',
-                    'active' => 'user.learning.css',
+                    'active' => 'user.learning.css.*',
                 ],
                 [
                     'title' => 'Javascript',
                     'url' => '/user/pembelajaran/javascript',
-                    'active' => 'user.learning.javascript',
+                    'active' => 'user.learning.javascript.*',
                 ],
                 [
                     'title' => 'PHP',
                     'url' => '/user/pembelajaran/php',
-                    'active' => 'user.learning.php',
+                    'active' => 'user.learning.php.*',
                 ],
                 [
-                    'title' => 'c++',
+                    'title' => 'C++',
                     'url' => '/user/pembelajaran/cpp',
-                    'active' => 'user.learning.cpp',
+                    'active' => 'user.learning.cpp.*',
                 ],
             ],
         ],

@@ -24,22 +24,6 @@
 
         <section
             class="bg-light-gray border-top border-primary border-4 d-flex flex-column align-items-center justify-content-center min-vh-100">
-
-            <div class="col-md-6 text-center">
-                @if (session()->has('success'))
-                    <div class="alert fade show col-md-8 col-8 mx-auto" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-                @error('error')
-                    <div class="alert fade show col-md-8 col-8 mx-auto" role="alert">
-                        {{ $message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @enderror
-            </div>
-
             <div class="container py-3">
                 <div class="sign-in card mx-auto shadow-lg">
                     <div class="card-body py-8 px-lg-5">
@@ -100,8 +84,26 @@
     <script src="{{ asset('assets/landingPage/js/custom.js')}}"></script>
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Sukses",
+                text: "{{ session('success') }}",
+            });
+        </script>
+    @endif
+    @error('error')
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "{{ $message }}",
+            });
+        </script>
+    @enderror
 </body>
-<!-- [Body] end -->
 
 </html>

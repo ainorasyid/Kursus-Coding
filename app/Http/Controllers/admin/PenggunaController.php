@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\pengguna;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorepenggunaRequest;
 use App\Http\Requests\UpdatepenggunaRequest;
+use App\Models\Pengguna;
+use App\Models\User;
 
 class PenggunaController extends Controller
 {
@@ -13,7 +15,8 @@ class PenggunaController extends Controller
      */
     public function index()
     {
-        //
+        $pengguna = Pengguna::with('user')->get();
+        return view('admin.manajemen-user.index', compact('pengguna'));
     }
 
     /**

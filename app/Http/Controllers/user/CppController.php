@@ -11,4 +11,24 @@ class CppController extends Controller
     {
         return view('user.learning.cpp');
     }
+
+    public function pengenalan()
+    {
+        return view('user.materi.cpp.Pengenalan');
+    }
+
+    public function looping()
+    {
+        return view('user.materi.cpp.Looping');
+    }
+
+    public function percabangan()
+    {
+        return view('user.materi.cpp.Percabangan');
+    }
+
+    public function variable()
+    {
+        return view('user.materi.cpp.Variabel');
+    }
 }
