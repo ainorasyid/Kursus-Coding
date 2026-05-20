@@ -83,7 +83,40 @@ Route::get('/user/materi/css/layout', function () {
     return view('user.materi.css.layout');
 });
 
-// ==================== QUIZ  ====================
+// ==================== MATERI PHP ====================
+Route::get('/user/materi/css/pengenalan', function () {
+    return view('user.materi.css.pengenalan');
+});
+
+Route::get('/user/materi/css/selector', function () {
+    return view('user.materi.css.selector');
+});
+
+Route::get('/user/materi/css/property', function () {
+    return view('user.materi.css.property');
+});
+
+Route::get('/user/materi/css/layout', function () {
+    return view('user.materi.css.layout');
+});
+
+// ==================== MATERI C++ ====================
+Route::get('/user/materi/css/pengenalan', function () {
+    return view('user.materi.css.pengenalan');
+});
+
+Route::get('/user/materi/css/selector', function () {
+    return view('user.materi.css.selector');
+});
+
+Route::get('/user/materi/css/property', function () {
+    return view('user.materi.css.property');
+});
+
+Route::get('/user/materi/css/layout', function () {
+    return view('user.materi.css.layout');
+});
+// ==================== QUIZ HTML  ====================
 
 Route::get('/quiz/html/1', function () {
     return view('user.quiz.html.quiz1');
