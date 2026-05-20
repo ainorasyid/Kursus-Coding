@@ -27,7 +27,439 @@
 
             <x-user.navbar></x-user.navbar>
 
-            
+            <div id="main-content">
+
+                <!-- Heading -->
+
+                <div class="page-heading">
+
+                    <div class="page-title mb-4">
+
+                        <div class="row">
+
+                            <div class="col-12 col-md-6">
+
+                                <h3>Percabangan PHP</h3>
+
+                                <p class="text-subtitle text-muted">
+
+                                    Pelajari penggunaan percabangan pada PHP
+                                    untuk membuat keputusan dalam program.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Apa itu Percabangan -->
+
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Apa itu Percabangan PHP?
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <p>
+
+                                Percabangan adalah proses pengambilan keputusan
+                                dalam program berdasarkan kondisi tertentu.
+
+                            </p>
+
+                            <p>
+
+                                Dengan percabangan, program dapat menjalankan
+                                code yang berbeda sesuai kondisi yang diberikan.
+
+                            </p>
+
+                            <div class="alert alert-primary">
+
+                                <i class="bi bi-lightbulb-fill"></i>
+
+                                Percabangan digunakan agar program dapat
+                                berpikir dan menentukan tindakan tertentu.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Jenis Percabangan -->
+
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Jenis Percabangan PHP
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>
+                                    <strong>if</strong>
+                                    → menjalankan code jika kondisi benar
+                                </li>
+
+                                <li>
+                                    <strong>if else</strong>
+                                    → memiliki kondisi benar dan salah
+                                </li>
+
+                                <li>
+                                    <strong>elseif</strong>
+                                    → digunakan untuk banyak kondisi
+                                </li>
+
+                                <li>
+                                    <strong>switch</strong>
+                                    → memilih kondisi tertentu
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Fungsi Percabangan -->
+
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Fungsi Percabangan PHP
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <ul>
+
+                                <li>
+                                    Membuat keputusan dalam program
+                                </li>
+
+                                <li>
+                                    Menjalankan kondisi tertentu
+                                </li>
+
+                                <li>
+                                    Membuat program lebih dinamis
+                                </li>
+
+                                <li>
+                                    Digunakan dalam login dan validasi data
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Contoh Percabangan -->
+
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h4 class="card-title">
+                                Contoh Percabangan PHP
+                            </h4>
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <p>
+
+                                Berikut beberapa contoh penggunaan
+                                percabangan pada PHP.
+
+                            </p>
+
+                            <!-- ===================== CONTOH 1 ===================== -->
+
+                            <div class="mb-5">
+
+                                <h5 class="text-primary">
+                                    Contoh 1: If
+                                </h5>
+
+                                <pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;?php
+
+$umur = 20;
+
+if ($umur >= 18) {
+
+    echo "Anda sudah dewasa";
+
+}
+
+?&gt;
+</code>
+</pre>
+
+                                <!-- Penjelasan -->
+
+                                <h5 class="text-primary mt-3">
+                                    Penjelasan Code
+                                </h5>
+
+                                <ul>
+
+                                    <li>
+                                        <strong>if</strong>
+                                        digunakan untuk mengecek kondisi.
+                                    </li>
+
+                                    <li>
+                                        Jika umur lebih dari atau sama dengan 18,
+                                        maka program dijalankan.
+                                    </li>
+
+                                    <li>
+                                        Program menampilkan teks
+                                        "Anda sudah dewasa".
+                                    </li>
+
+                                </ul>
+
+                                <!-- Output -->
+
+                                <h5 class="text-primary mt-3">
+                                    Output
+                                </h5>
+
+                                <div class="border rounded p-4 bg-light">
+
+                                    Anda sudah dewasa
+
+                                </div>
+
+                            </div>
+
+                            <!-- ===================== CONTOH 2 ===================== -->
+
+                            <div class="mb-5">
+
+                                <h5 class="text-primary">
+                                    Contoh 2: If Else
+                                </h5>
+
+                                <pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;?php
+
+$nilai = 70;
+
+if ($nilai >= 75) {
+
+    echo "Lulus";
+
+} else {
+
+    echo "Tidak Lulus";
+
+}
+
+?&gt;
+</code>
+</pre>
+
+                                <!-- Penjelasan -->
+
+                                <h5 class="text-primary mt-3">
+                                    Penjelasan Code
+                                </h5>
+
+                                <ul>
+
+                                    <li>
+                                        <strong>if</strong>
+                                        digunakan untuk kondisi benar.
+                                    </li>
+
+                                    <li>
+                                        <strong>else</strong>
+                                        dijalankan jika kondisi salah.
+                                    </li>
+
+                                    <li>
+                                        Karena nilai 70 kurang dari 75,
+                                        maka outputnya "Tidak Lulus".
+                                    </li>
+
+                                </ul>
+
+                                <!-- Output -->
+
+                                <h5 class="text-primary mt-3">
+                                    Output
+                                </h5>
+
+                                <div class="border rounded p-4 bg-light">
+
+                                    Tidak Lulus
+
+                                </div>
+
+                            </div>
+
+                            <!-- ===================== CONTOH 3 ===================== -->
+
+                            <div class="mb-2">
+
+                                <h5 class="text-primary">
+                                    Contoh 3: Switch Case
+                                </h5>
+
+                                <pre class="bg-dark text-white p-4 rounded">
+<code>
+&lt;?php
+
+$hari = "Senin";
+
+switch ($hari) {
+
+    case "Senin":
+        echo "Hari Kuliah";
+        break;
+
+    case "Minggu":
+        echo "Hari Libur";
+        break;
+
+    default:
+        echo "Hari Biasa";
+}
+
+?&gt;
+</code>
+</pre>
+
+                                <!-- Penjelasan -->
+
+                                <h5 class="text-primary mt-3">
+                                    Penjelasan Code
+                                </h5>
+
+                                <ul>
+
+                                    <li>
+                                        <strong>switch</strong>
+                                        digunakan untuk banyak pilihan kondisi.
+                                    </li>
+
+                                    <li>
+                                        <strong>case</strong>
+                                        adalah kondisi yang dicek.
+                                    </li>
+
+                                    <li>
+                                        <strong>break</strong>
+                                        digunakan untuk menghentikan program.
+                                    </li>
+
+                                    <li>
+                                        Karena nilai hari adalah Senin,
+                                        maka outputnya "Hari Kuliah".
+                                    </li>
+
+                                </ul>
+
+                                <!-- Output -->
+
+                                <h5 class="text-primary mt-3">
+                                    Output
+                                </h5>
+
+                                <div class="border rounded p-4 bg-light">
+
+                                    Hari Kuliah
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Quiz -->
+
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="mb-3">
+
+                                Sudah memahami Percabangan PHP?
+
+                            </h5>
+
+                            <a href="/quiz/php/3"
+                                class="btn btn-primary btn-lg">
+
+                                <i class="bi bi-patch-question-fill"></i>
+
+                                Mulai Quiz
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
     <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>
 
