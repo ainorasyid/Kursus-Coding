@@ -33,7 +33,7 @@
                                     <div class="card-header">
                                         <h4 class="card-title">Semua Pengguna</h4>
                                         <p class="text-muted">
-                                            Table semua pengguna atau pendaftar pada kursus Codenova..
+                                            Table semua pengguna atau pendaftar pada kursus Codenova.
                                         </p>
                                     </div>
                                     <div class="card-content px-4">
@@ -55,10 +55,19 @@
                                                             <td>{{ $user->firstname }}</td>
                                                             <td>{{ $user->lastname }}</td>
                                                             <td>{{ $user->fullname }}</td>
-                                                            <td>{{ $user->user->email }}</td>
-                                                            <td>
-                                                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                                                <a href="#" class="btn btn-sm btn-warning">Hapus</a>
+                                                            <td>{{ $user->user?->email }}</td>
+                                                            <td class="d-flex justify-content-center gap-3">
+                                                                <a href="{{ route('admin.management.user.edit', $user->id) }}"
+                                                                    class="btn btn-sm btn-warning">Edit</a>
+                                                                <form action="{{ route('admin.management.user.delete', $user->id) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+
+                                                                    <button type="submit" class="btn btn-sm btn-danger">
+                                                                        Hapus
+                                                                    </button>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     @endforeach
