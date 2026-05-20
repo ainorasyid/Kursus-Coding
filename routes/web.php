@@ -139,7 +139,7 @@ Route::get('/quiz/html/4', function () {
 // ==================== QUIZ c++  ====================
 
 Route::get('/quiz/cpp/1', function () {
-    return view('user.quiz.html.quiz1');
+    return view('user.quiz.cpp.quiz1');
 });
 Route::get('/quiz/cpp/2', function () {
     return view('user.quiz.cpp.quiz2');

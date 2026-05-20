@@ -280,7 +280,7 @@
                                 Sudah memahami CSS Layout?
                             </h5>
 
-                            <a href="/quiz/css/layout/1" class="btn btn-primary btn-lg">
+                            <a href="/quiz/css/4" class="btn btn-primary btn-lg">
 
                                 <i class="bi bi-patch-question-fill"></i>
 

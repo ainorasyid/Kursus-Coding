@@ -240,6 +240,30 @@ h1 {
                     </div>
 
                 </section>
+                <!-- Quiz -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="mb-3">
+                                Sudah memahami materi CSS Selector?
+                            </h5>
+
+                            <a href="/quiz/css/3" class="btn btn-primary btn-lg">
+
+                                <i class="bi bi-patch-question-fill"></i>
+
+                                Mulai Quiz
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
 
                 <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
                 <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>

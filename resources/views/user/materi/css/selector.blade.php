@@ -260,7 +260,7 @@ p {
                                 Sudah memahami materi CSS Selector?
                             </h5>
 
-                            <a href="/quiz/css/selector/1" class="btn btn-primary btn-lg">
+                            <a href="/quiz/css/2" class="btn btn-primary btn-lg">
 
                                 <i class="bi bi-patch-question-fill"></i>
 
