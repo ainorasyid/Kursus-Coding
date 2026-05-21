@@ -31,10 +31,15 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Semua Pengguna</h4>
-                                        <p class="text-muted">
-                                            Table semua pengguna atau pendaftar pada kursus Codenova.
-                                        </p>
+                                        <h4 class="card-title">Tabel Kursus</h4>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="text-muted">
+                                                Table semua kursus yang ada pada kursus Codenova.
+                                            </p>
+                                            <a href="" class="btn btn-sm btn-primary">
+                                                Tambah kursus
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="card-content px-4">
                                         <!-- table hover -->
@@ -42,24 +47,20 @@
                                             <table class="table table-hover mb-0 ">
                                                 <thead>
                                                     <tr>
-                                                        <th>Nama Depan</th>
-                                                        <th>Nama Belakang</th>
-                                                        <th>Nama Lengkap</th>
-                                                        <th>Email</th>
+                                                        <th>Judul</th>
+                                                        <th>Deskripsi</th>
                                                         <th class="text-center">Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($pengguna as $user)
+                                                    @foreach ($kursus as $k)
                                                         <tr>
-                                                            <td>{{ $user->firstname }}</td>
-                                                            <td>{{ $user->lastname }}</td>
-                                                            <td>{{ $user->fullname }}</td>
-                                                            <td>{{ $user->user?->email }}</td>
+                                                            <td>{{ $kuser->judul }}</td>
+                                                            <td>{{ $kuser->deskripsi }}</td>
                                                             <td class="d-flex justify-content-center gap-3">
-                                                                <a href="{{ route('admin.management.user.edit', $user->id) }}"
+                                                                <a href="{{ route('admin.management.user.edit', $k->id) }}"
                                                                     class="btn btn-sm btn-warning">Edit</a>
-                                                                <form action="{{ route('admin.management.user.delete', $user->id) }}"
+                                                                <form action="{{ route('admin.management.user.delete', $k->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -92,27 +93,6 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    @if (session()->has('success'))
-        <script>
-            Swal.fire({
-                icon: "success",
-                title: "Berhasil",
-                text: "{{ session('success') }}",
-            });
-        </script>
-    @endif
-    @error('error')
-        <script>
-            Swal.fire({
-                icon: "error",
-                title: "Gagal",
-                text: "{{ session('error') }}",
-            });
-        </script>
-    @enderror
-
 </body>
 
 </html>

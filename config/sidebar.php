@@ -31,14 +31,19 @@ return [
             'active' => 'mentor.pendaftar',
         ],
         [
-            'title' => 'Materi',
+            'title' => 'Manajemen Kursus',
             'icon' => 'bi bi-book-fill',
-            'active' => 'mentor.material.*',
+            'active' => 'mentor.manajemen-kursus.*',
             'submenu' => [
                 [
+                    'title' => 'Kelola Kursus',
+                    'url' => '/mentor/manajemen-kursus/kursus',
+                    'active' => 'mentor.manajemen-kursus.kursus.*',
+                ],
+                [
                     'title' => 'Kelola Materi',
-                    'url' => '#',
-                    'active' => 'mentor.material.index',
+                    'url' => '/mentor/manajemen-kursus/materi',
+                    'active' => 'mentor.manajemen-kursus.materi.*',
                 ],
             ],
         ],

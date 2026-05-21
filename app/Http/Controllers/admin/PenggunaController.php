@@ -57,19 +57,28 @@ class PenggunaController extends Controller
      */
     public function update(UpdatepenggunaRequest $request, pengguna $pengguna)
     {
-        $pengguna->update([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'fullname' => $request->firstname . ' ' . $request->lastname,
-        ]);
+        try {
+            $pengguna->update([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'fullname' => $request->firstname . ' ' . $request->lastname,
+            ]);
 
-        $pengguna->user->update([
-            'email' => $request->email,
-        ]);
+            $pengguna->user->update([
+                'email' => $request->email,
+            ]);
 
-        return redirect()
-            ->route('admin.management.user')
-            ->with('success', 'Data berhasil diupdate');
+            return redirect()
+                ->route('admin.management.user')
+                ->with('success', 'Data berhasil diupdate');
+
+        } catch (\Exception $e) {
+
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('error', 'Data gagal diupdate');
+        }
     }
 
     /**
