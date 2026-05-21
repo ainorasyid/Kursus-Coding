@@ -118,7 +118,7 @@
                                         Belajar pengertian CSS, fungsi CSS,
                                         dan alasan CSS penting dipelajari.
                                     </p>
-                                    <a href="{{ route('user.learning.css.pengenalan') }}"
+                                    <a href=""
                                         class="btn btn-primary w-100">
                                         Pelajari Materi
                                     </a>

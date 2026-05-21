@@ -36,7 +36,8 @@
                     <section class="section">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form form-horizontal" action="{{ route('admin.management.user.update', $pengguna->id) }}" method="POST">
+                                <form class="form form-horizontal"
+                                    action="{{ route('admin.management.user.update', $pengguna->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-body">
@@ -52,22 +53,25 @@
                                                 <label>Nama Belakang</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text"  class="form-control" name="lastname"
+                                                <input type="text" class="form-control" name="lastname"
                                                     placeholder="Last Name" value="{{ $pengguna->lastname }}">
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="email" class="form-control"
-                                                    name="email" placeholder="Email" value="{{ $pengguna->user?->email }}">
+                                                <input type="email" class="form-control" name="email"
+                                                    placeholder="Email" value="{{ $pengguna->user?->email }}">
                                             </div>
                                             <div class="col-sm-12 d-flex justify-content-between">
-                                                <a href="{{ route('admin.management.user') }}" class="btn btn-primary me-1 mb-1">Kembali</a>
+                                                <a href="{{ route('admin.management.user') }}"
+                                                    class="btn btn-primary me-1 mb-1 d-flex align-items-center gap-2"><i
+                                                        class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
                                                 <div>
-                                                    <button type="submit" class="btn btn-success me-1 mb-1">Update</button>
+                                                    <button type="submit"
+                                                        class="btn btn-success me-1 mb-1">Update</button>
                                                     <button type="reset"
-                                                    class="btn btn-light-danger me-1 mb-1">Reset</button>
+                                                        class="btn btn-light-danger me-1 mb-1">Reset</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,7 +81,7 @@
                         </div>
                     </section>
                 </div>
-                
+
                 <x-footer></x-footer>
             </div>
         </div>

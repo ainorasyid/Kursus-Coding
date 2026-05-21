@@ -9,6 +9,7 @@ use App\Http\Controllers\user\QuizController;
 use App\Http\Controllers\user\MateriController;
 
 
+
 Route::get('/', function () {
     return view('index');
 })->name('landing');
@@ -30,8 +31,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])->name('mentor.dashboard');
-Route::get('/mentor/pendaftar', [PendaftarController::class, 'index'])->name('mentor.pendaftar');
+
 
 // ==================== QUIZ HTML  ====================
 
@@ -112,4 +112,5 @@ Route::get('/html', [MateriController::class, 'index'])->name('materi');
 
 
 require __DIR__ . '/role/admin.php';
+require __DIR__ . '/role/mentor.php';
 require __DIR__ . '/role/user.php';
