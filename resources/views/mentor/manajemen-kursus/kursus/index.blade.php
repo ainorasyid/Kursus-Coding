@@ -36,7 +36,8 @@
                                             <p class="text-muted">
                                                 Table semua kursus yang ada pada kursus Codenova.
                                             </p>
-                                            <a href="" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('mentor.manajemen-kursus.kursus.create') }}"
+                                                class="btn btn-sm btn-primary">
                                                 Tambah kursus
                                             </a>
                                         </div>
@@ -55,12 +56,13 @@
                                                 <tbody>
                                                     @foreach ($kursus as $k)
                                                         <tr>
-                                                            <td>{{ $kuser->judul }}</td>
-                                                            <td>{{ $kuser->deskripsi }}</td>
+                                                            <td>{{ $k->judul }}</td>
+                                                            <td>{{ $k->deskripsi }}</td>
                                                             <td class="d-flex justify-content-center gap-3">
-                                                                <a href="{{ route('admin.management.user.edit', $k->id) }}"
+                                                                <a href="{{ route('mentor.manajemen-kursus.kursus.edit', $k->id) }}"
                                                                     class="btn btn-sm btn-warning">Edit</a>
-                                                                <form action="{{ route('admin.management.user.delete', $k->id) }}"
+                                                                <form
+                                                                    action="{{ route('mentor.manajemen-kursus.kursus.delete', $k->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -93,6 +95,26 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil",
+                text: "{{ session('success') }}",
+            });
+        </script>
+    @endif
+    @error('error')
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal",
+                text: "{{ session('error') }}",
+            });
+        </script>
+    @enderror
 </body>
 
 </html>

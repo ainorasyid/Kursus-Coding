@@ -29,7 +29,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-8 order-md-1 order-last mb-3">
-                                <h1>Edit User {{ $pengguna->fullname }}</h1>
+                                <h1>Edit Kursus</h1>
                             </div>
                         </div>
                     </div>
@@ -37,34 +37,27 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="form form-horizontal"
-                                    action="{{ route('admin.management.user.update', $pengguna->id) }}" method="POST">
+                                    action="{{ route('mentor.manajemen-kursus.kursus.update', $kursus->id) }}"
+                                    method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Nama Depan</label>
+                                                <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="firstname"
-                                                    placeholder="First Name" value="{{ $pengguna->firstname }}">
+                                                <input type="text" class="form-control" name="judul"
+                                                    value="{{ $kursus->judul }}">
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Nama Belakang</label>
+                                                <label>Deskripsi</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="lastname"
-                                                    placeholder="Last Name" value="{{ $pengguna->lastname }}">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-8 form-group">
-                                                <input type="email" class="form-control" name="email"
-                                                    placeholder="Email" value="{{ $pengguna->user?->email }}">
+                                                <textarea class="form-control" name="deskripsi" rows="5" placeholder="Masukkan deskripsi materi">{{ old('deskripsi', $kursus->deskripsi) }}></textarea>
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
-                                                <a href="{{ route('admin.management.user') }}"
+                                                <a href="{{ route('mentor.manajemen-kursus.kursus') }}"
                                                     class="btn btn-primary me-1 mb-1 d-flex align-items-center gap-2"><i
                                                         class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
                                                 <div>

@@ -29,7 +29,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-8 order-md-1 order-last mb-3">
-                                <h1>Edit User {{ $pengguna->fullname }}</h1>
+                                <h1>Tambah Materi</h1>
                             </div>
                         </div>
                     </div>
@@ -37,39 +37,50 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="form form-horizontal"
-                                    action="{{ route('admin.management.user.update', $pengguna->id) }}" method="POST">
+                                    action="{{ route('mentor.manajemen-kursus.materi.store') }}" method="POST">
                                     @csrf
-                                    @method('PUT')
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>Nama Depan</label>
+                                                <label>Kursus</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="firstname"
-                                                    placeholder="First Name" value="{{ $pengguna->firstname }}">
+                                                <fieldset class="form-group">
+                                                    <select class="form-select" name="kursus_id">
+                                                        <option value="">-- Pilih Kursus --</option>
+                                                        @foreach ($kursus as $item)
+                                                            <option value="{{ $item->id }}">
+                                                                {{ $item->judul }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </fieldset>
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Nama Belakang</label>
+                                                <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="lastname"
-                                                    placeholder="Last Name" value="{{ $pengguna->lastname }}">
+                                                <input type="text" class="form-control" name="judul">
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Email</label>
+                                                <label>Konten</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="email" class="form-control" name="email"
-                                                    placeholder="Email" value="{{ $pengguna->user?->email }}">
+                                                <textarea class="form-control" name="konten" rows="5"></textarea>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Video</label>
+                                            </div>
+                                            <div class="col-md-8 form-group">
+                                                <input type="text" class="form-control" name="video">
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
-                                                <a href="{{ route('admin.management.user') }}"
+                                                <a href="{{ route('mentor.manajemen-kursus.materi') }}"
                                                     class="btn btn-primary me-1 mb-1 d-flex align-items-center gap-2"><i
                                                         class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
                                                 <div>
                                                     <button type="submit"
-                                                        class="btn btn-success me-1 mb-1">Update</button>
+                                                        class="btn btn-success me-1 mb-1">Tambah</button>
                                                     <button type="reset"
                                                         class="btn btn-light-danger me-1 mb-1">Reset</button>
                                                 </div>

@@ -4,13 +4,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['judul', 'kontent'])]
+#[Fillable(['kursus_id', 'judul', 'konten', 'video'])]
 class Materi extends Model
 {
     protected $table = 'materi';
 
     public function kursus()
-{
-    return $this->belongsTo(Kursus::class);
-}
+    {
+        return $this->belongsTo(Kursus::class);
+    }
 }

@@ -36,7 +36,7 @@
                                             <p class="text-muted">
                                                 Table semua materi yang ada pada kursus Codenova.
                                             </p>
-                                            <a href="" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('mentor.manajemen-kursus.materi.create') }}" class="btn btn-sm btn-primary">
                                                 Tambah materi
                                             </a>
                                         </div>
@@ -47,20 +47,24 @@
                                             <table class="table table-hover mb-0 ">
                                                 <thead>
                                                     <tr>
+                                                        <th>Kursus</th>
                                                         <th>Judul</th>
                                                         <th>Konten</th>
+                                                        <th>Video</th>
                                                         <th class="text-center">Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($materi as $m)
                                                         <tr>
+                                                            <td>{{ $m->kursus->judul }}</td>
                                                             <td>{{ $m->judul }}</td>
                                                             <td>{{ $m->konten }}</td>
+                                                            <td>{{ $m->video }}</td>
                                                             <td class="d-flex justify-content-center gap-3">
-                                                                <a href="{{ route('admin.management.user.edit', $m->id) }}"
+                                                                <a href="{{ route('mentor.manajemen-kursus.materi.edit', $m->id) }}"
                                                                     class="btn btn-sm btn-warning">Edit</a>
-                                                                <form action="{{ route('admin.management.user.delete', $m->id) }}"
+                                                                <form action="{{ route('mentor.manajemen-kursus.materi.delete', $m->id) }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -93,6 +97,26 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil",
+                text: "{{ session('success') }}",
+            });
+        </script>
+    @endif
+    @error('error')
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal",
+                text: "{{ session('error') }}",
+            });
+        </script>
+    @enderror
 </body>
 
 </html>
