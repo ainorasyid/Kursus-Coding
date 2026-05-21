@@ -19,7 +19,7 @@ Route::prefix('user')->name('user.')->group(function() {
     Route::get('/pembelajaran/html/heading-paragraph', [HtmlController::class, 'headingParagraph'])->name('learning.html.heading-paragraph');
     Route::get('/pembelajaran/html/link-image', [HtmlController::class, 'linkImage'])->name('learning.html.link-image');
 
-    // route materi html
+    // route materi css
     Route::get('/pembelajaran/css', [CssController::class, 'index'])->name('learning.css');
     Route::get('/pembelajaran/css/pengenalan', [CssController::class, 'pengenalan'])->name('learning.css.pengenalan');
     Route::get('/pembelajaran/css/selector', [CssController::class, 'selector'])->name('learning.css.selector');

@@ -294,47 +294,73 @@
 
                     </div>
 
-                </section>
+                    <section class="section">
 
-                <!-- Tombol Quiz -->
-                <section class="section">
+                        <div class="text-center mb-4">
+                            <h1>
+                                Video: HTML for Beginners
+                            </h1>
+                        </div>
 
-                    <div class="card">
+                        <div class="col-md-10 mx-auto">
 
-                        <div class="card-body text-center">
-
-                            <h5 class="mb-3">
-                                Sudah memahami materi?
-                            </h5>
-
-                            <a href="/quiz/html/1"
-                                class="btn btn-primary btn-lg">
-
-                                <i class="bi bi-patch-question-fill"></i>
-
-                                Mulai Quiz
-
-                            </a>
+                            <div class="ratio ratio-16x9">
+                                <iframe
+                                    src="https://www.youtube.com/embed/qz0aGYrrlhU"
+                                    title="HTML for Beginners"
+                                    allowfullscreen
+                                    style="border-radius:10px;">
+                                </iframe>
+                            </div>
 
                         </div>
 
-                    </div>
+                    </section>
 
-                </section>
+                    <!-- Navigation Materi -->
+                    <section class="section">
 
-            </div>
+                        <div class="card">
 
-        </div>
+                            <div class="card-body">
 
-    </div>
-    <x-footer></x-footer>
-    <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>
+                                <div class="d-flex justify-content-between">
 
-    <script src="{{ asset('assets/dashboard/vendors/apexcharts/apexcharts.js') }}"></script>
-    <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
+                                    <!-- Previous -->
+                                    <a href="/user/materi/html"
+                                        class="btn btn-secondary d-flex align-items-center gap-2">
 
-    <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+                                        <i class="bi bi-arrow-left-circle-fill"></i>
+
+                                        Previous
+
+                                    </a>
+
+                                    <!-- Next -->
+                                    <a href="{{ route('user.learning.html.struktur-html') }}"
+                                        class="btn btn-success">
+
+                                        Next
+
+                                        <i class="bi bi-arrow-right-circle-fill"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+                    <x-footer></x-footer>
+                    <script src="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+                    <script src="{{ asset('assets/dashboard/js/bootstrap.bundle.min.js') }}"></script>
+
+                    <script src="{{ asset('assets/dashboard/vendors/apexcharts/apexcharts.js') }}"></script>
+                    <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
+
+                    <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
 </body>
 
 </html>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kursus_id');
             $table->string('judul');
             $table->text('konten');
+            $table->string('video');
             $table->foreign('kursus_id')
                 ->references('id')
                 ->on('kursus');

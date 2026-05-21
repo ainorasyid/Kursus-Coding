@@ -735,8 +735,55 @@ alt="Gambar Pemandangan"&gt;
 
                 </section>
 
+                <section class="section">
+
+                    <div class="text-center mb-4">
+                        <h1>
+                            Video: Link dan Image HTML
+                        </h1>
+                    </div>
+
+                    <div class="col-md-10 mx-auto">
+
+                        <div class="ratio ratio-16x9">
+                            <iframe
+                                src="https://www.youtube.com/embed/G3e-cpL7ofc"
+                                title="Link dan Image HTML"
+                                allowfullscreen
+                                style="border-radius:10px;">
+                            </iframe>
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- Navigation Materi -->
+                <section class="section">
+
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between">
+
+                                <!-- Previous -->
+                                <a href="{{ route('user.learning.html.heading-paragraph') }}"
+                                    class="btn btn-secondary d-flex align-items-center gap-2">
+
+                                    <i class="bi bi-arrow-left-circle-fill"></i>
+
+                                    Previous
+
+                                </a>
 
 
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
                 <!-- QUIZ -->
                 <section class="section">
 

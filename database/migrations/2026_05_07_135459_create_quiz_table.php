@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('quiz', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('materi_id');
+            $table->unsignedBigInteger('kursus_id');
             $table->string('judul');
-            $table->foreign('materi_id')
+            $table->foreign('kursus_id')
                 ->references('id')
-                ->on('materi');
+                ->on('kursus');
             $table->timestamps();
         });
     }

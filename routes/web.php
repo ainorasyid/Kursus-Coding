@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\mentor\DashboardController as MentorDashboard;
 use App\Http\Controllers\mentor\PendaftarController;
+use App\Http\Controllers\user\QuizController;
+use App\Http\Controllers\user\MateriController;
 
 
 Route::get('/', function () {
@@ -101,6 +103,12 @@ Route::get('/quiz/php/3', function () {
 Route::get('/quiz/php/4', function () {
     return view('user.quiz.php.quiz4');
 });
+
+Route::get('/quiz/{kursus_id}', [QuizController::class, 'show'])
+    ->name('quiz.show');
+Route::get('/html', [MateriController::class, 'index'])->name('materi');
+
+
 
 
 require __DIR__ . '/role/admin.php';

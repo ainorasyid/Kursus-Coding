@@ -573,28 +573,59 @@
                     </div>
 
                 </section>
+                <section class="section">
 
+                    <div class="text-center mb-4">
+                        <h1>
+                            Video: Struktur Dasar HTML
+                        </h1>
+                    </div>
 
+                    <div class="col-md-10 mx-auto">
 
-                <!-- QUIZ -->
+                        <div class="ratio ratio-16x9">
+                            <iframe
+                                src="https://www.youtube.com/embed/UB1O30fR-EE"
+                                title="Struktur Dasar HTML"
+                                allowfullscreen
+                                style="border-radius:10px;">
+                            </iframe>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Navigation Materi -->
                 <section class="section">
 
                     <div class="card">
 
-                        <div class="card-body text-center">
+                        <div class="card-body">
 
-                            <h5 class="mb-3">
-                                Sudah memahami Struktur HTML?
-                            </h5>
+                            <div class="d-flex justify-content-between">
 
-                            <a href="/quiz/html/2"
-                                class="btn btn-primary btn-lg">
+                                <!-- Previous -->
+                                <a href="{{ route('user.learning.html.pengenalan') }}"
+                                    class="btn btn-secondary d-flex align-items-center gap-2">
 
-                                <i class="bi bi-patch-question-fill"></i>
+                                    <i class="bi bi-arrow-left-circle-fill"></i>
 
-                                Mulai Quiz
+                                    Previous
 
-                            </a>
+                                </a>
+
+                                <!-- Next -->
+                                <a href="{{ route('user.learning.html.heading-paragraph') }}"
+                                    class="btn btn-success">
+
+                                    Next
+
+                                    <i class="bi bi-arrow-right-circle-fill"></i>
+
+                                </a>
+
+                            </div>
 
                         </div>
 
