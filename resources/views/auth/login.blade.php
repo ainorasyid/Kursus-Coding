@@ -16,7 +16,7 @@
 
     <div class="page-wrapper overflow-hidden">
 
-        <div class="position-fixed bottom-0 end-0 m-4" style="z-index: 9999;">
+        <div class="position-fixed bottom-0 end-0 m-4">
             <a href="{{ route('landing') }}" class="btn btn-primary rounded-circle p-3">
                 <iconify-icon icon="lucide:arrow-left" width="20" height="20"></iconify-icon>
             </a>

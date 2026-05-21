@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\mentor\DashboardController as MentorDashboard;
+use App\Http\Controllers\mentor\PendaftarController;
 
 
 Route::get('/', function () {
@@ -27,8 +28,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-
 Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])->name('mentor.dashboard');
+Route::get('/mentor/pendaftar', [PendaftarController::class, 'index'])->name('mentor.pendaftar');
 
 // ==================== QUIZ HTML  ====================
 
@@ -101,11 +102,6 @@ Route::get('/quiz/php/4', function () {
     return view('user.quiz.php.quiz4');
 });
 
-
-// ==================== USER ROLE ====================
-
-require __DIR__ . '/role/user.php';
-Route::get('/mentor/dashboard', [MentorDashboard::class, 'index'])->name('mentor.dashboard');
 
 require __DIR__ . '/role/admin.php';
 require __DIR__ . '/role/user.php';

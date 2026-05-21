@@ -25,6 +25,12 @@ return [
             'active' => 'mentor.dashboard',
         ],
         [
+            'title' => 'Pendaftar',
+            'icon' => 'bi bi-people-fill',
+            'route' => 'mentor.pendaftar',
+            'active' => 'mentor.pendaftar',
+        ],
+        [
             'title' => 'Materi',
             'icon' => 'bi bi-book-fill',
             'active' => 'mentor.material.*',

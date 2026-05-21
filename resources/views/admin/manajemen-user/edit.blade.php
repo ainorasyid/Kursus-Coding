@@ -29,7 +29,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-8 order-md-1 order-last mb-3">
-                                <h1>Update User {{ $pengguna->fullname }}!</h1>
+                                <h1>Edit User {{ $pengguna->fullname }}</h1>
                             </div>
                         </div>
                     </div>
@@ -42,14 +42,14 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>First Name</label>
+                                                <label>Nama Depan</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="text" class="form-control" name="firstname"
                                                     placeholder="First Name" value="{{ $pengguna->firstname }}">
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Last Name</label>
+                                                <label>Nama Belakang</label>
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <input type="text"  class="form-control" name="lastname"
