@@ -1,19 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\user\pembelajaran;
 
 use App\Http\Controllers\Controller;
-use App\Models\Materi;
 use Illuminate\Http\Request;
+use App\Models\Materi;
 
 class MateriController extends Controller
 {
-    public function index()
-    {
-        $materi = Materi::all();
-        return view('user.materi.html', compact('materi'));
-    }
-
     public function show($id)
     {
         $materi = Materi::findOrFail($id);

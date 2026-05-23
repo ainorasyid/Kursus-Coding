@@ -13,7 +13,7 @@ return [
             'icon' => 'bi bi-people-fill',
             'route' => 'admin.management.user',
             'active' => 'admin.management.*',
-            
+
         ],
     ],
 
@@ -33,7 +33,7 @@ return [
         [
             'title' => 'Manajemen Kursus',
             'icon' => 'bi bi-book-fill',
-            'active' => 'mentor.manajemen-kursus.*',
+            'active' => 'mentor.manajemen-kursus*',
             'submenu' => [
                 [
                     'title' => 'Kelola Kursus',
@@ -59,34 +59,8 @@ return [
         [
             'title' => 'Pembelajaran',
             'icon' => 'bi bi-book-half',
-            'active' => 'user.learning.*',
-            'submenu' => [
-                [
-                    'title' => 'HTML',
-                    'url' => '/user/pembelajaran/html',
-                    'active' => 'user.learning.html.*',
-                ],
-                [
-                    'title' => 'CSS',
-                    'url' => '/user/pembelajaran/css',
-                    'active' => 'user.learning.css.*',
-                ],
-                [
-                    'title' => 'Javascript',
-                    'url' => '/user/pembelajaran/javascript',
-                    'active' => 'user.learning.javascript.*',
-                ],
-                [
-                    'title' => 'PHP',
-                    'url' => '/user/pembelajaran/php',
-                    'active' => 'user.learning.php.*',
-                ],
-                [
-                    'title' => 'C++',
-                    'url' => '/user/pembelajaran/cpp',
-                    'active' => 'user.learning.cpp.*',
-                ],
-            ],
+            'route' => 'user.pembelajaran',
+            'active' => 'user.pembelajaran*',
         ],
     ],
 ];

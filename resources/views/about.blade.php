@@ -30,8 +30,7 @@
                 data-aos-duration="1000">
                 <img src="{{ asset('assets/landingPage/images/svgs/primary-leaf.svg')}}" alt=""
                   class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-70">Kami menyediakan <span class="text-primary">pembelajaran
-                    pemrograman </span> meningkatkan skill digital dan membuka peluang masa depan. </p>
+                <p class="mb-0 text-white fs-5 text-opacity-70">Kami membantu <span class="text-primary">meningkatkan skill </span>digital dan melakukan pembelajaran dasar bahasa pemograman. </p>
               </div>
             </div>
           </div>

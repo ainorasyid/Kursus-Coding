@@ -46,12 +46,6 @@
                                                 alt="" width="20" height="20"
                                                 class="img-fluid animate-spin">Services</a>
                                     </li>
-                                    <li class="header-item">
-                                        <a href="{{ route('contact') }}"
-                                            class="header-link hstack gap-2 fs-7 fw-bold text-dark {{ request()->routeIs('contact') ? 'active' : '' }}"><img
-                                                src="{{ asset('assets/landingPage/images/svgs/secondary-leaf.svg')}}"
-                                                alt="" width="20" height="20" class="img-fluid animate-spin">Contact</a>
-                                    </li>
                                 </ul>
                                 <div class="hstack gap-3">
                                     <a href="{{ route('login') }}"

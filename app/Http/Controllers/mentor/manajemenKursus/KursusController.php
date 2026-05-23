@@ -78,7 +78,6 @@ class KursusController extends Controller
     public function update(Request $request, Kursus $kursus)
     {
         try {
-
             $validateData = $request->validate([
                 'judul' => 'required',
                 'deskripsi' => 'required',
