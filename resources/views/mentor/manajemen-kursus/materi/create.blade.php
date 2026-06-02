@@ -56,7 +56,7 @@
                                                     </select>
                                                     @error('kursus_id')
                                                     <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
+                                                        {{ $message }} 
                                                     </div>
                                                 @enderror
                                                 </fieldset>
