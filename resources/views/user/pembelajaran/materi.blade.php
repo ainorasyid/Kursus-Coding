@@ -53,9 +53,9 @@
                                         <a href="{{ route('user.pembelajaran') }}" class="btn btn-secondary mb-3">
                                             ← Kembali ke Kursus
                                         </a>
-                                        <h2 class="fw-bold">{{ $materi->judul }}</h2>
+                                        <h2 class="fw-bold">{{ $materi->judul ?? 'Materi belum ada' }}</h2>
                                         <hr>
-                                        <div>{!! $materi->konten !!}</div>
+                                        <div>{!! $materi->konten ?? 'Materi belum ada' !!}</div>
                                         <div class="d-flex align-items-center mt-5">
                                             <div>
                                                 @if($prev)<a href="{{ route('user.pembelajaran.show', [
@@ -70,6 +70,10 @@
                                                         $kursus->judul,
                                                         $next->judul
                                                     ]) }}" class="btn btn-primary">Next →</a>
+                                                @else
+                                                    <a href="{{ route('user.pembelajaran.quiz', $materi->kursus_id) }}" class="btn btn-success">
+                                                        Kerjakan Quiz
+                                                    </a>
                                                 @endif
                                             </div>
                                         </div>

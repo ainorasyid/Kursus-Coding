@@ -58,19 +58,21 @@
                                                         <tr>
                                                             <td>{{ $k->judul }}</td>
                                                             <td>{{ $k->deskripsi }}</td>
-                                                            <td class="d-flex justify-content-center gap-3">
-                                                                <a href="{{ route('mentor.manajemen-kursus.kursus.edit', $k->id) }}"
-                                                                    class="btn btn-sm btn-warning">Edit</a>
-                                                                <form
-                                                                    action="{{ route('mentor.manajemen-kursus.kursus.delete', $k->id) }}"
-                                                                    method="POST">
-                                                                    @csrf
-                                                                    @method('DELETE')
-
-                                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                                        Hapus
-                                                                    </button>
-                                                                </form>
+                                                            <td>
+                                                                <div class="d-flex justify-content-center gap-3">
+                                                                    <a href="{{ route('mentor.manajemen-kursus.kursus.edit', $k->id) }}"
+                                                                        class="btn btn-sm btn-warning">Edit</a>
+                                                                    <form
+                                                                        action="{{ route('mentor.manajemen-kursus.kursus.delete', $k->id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+    
+                                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                                            Hapus
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     @endforeach

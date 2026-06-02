@@ -31,26 +31,16 @@ class KursusController extends Controller
      */
     public function store(Request $request)
     {
-        try {
+        $validateData = $request->validate([
+            'judul' => 'required',
+            'deskripsi' => 'required',
+        ]);
 
-            $validateData = $request->validate([
-                'judul' => 'required',
-                'deskripsi' => 'required',
-            ]);
+        Kursus::create($validateData);
 
-            Kursus::create($validateData);
-
-            return redirect()
-                ->route('mentor.manajemen-kursus.kursus')
-                ->with('success', 'Kursus berhasil ditambahkan');
-
-        } catch (\Exception $e) {
-
-            return redirect()
-                ->back()
-                ->withInput()
-                ->with('error', 'Kursus gagal ditambahkan');
-        }
+        return redirect()
+            ->route('mentor.manajemen-kursus.kursus')
+            ->with('success', 'Kursus berhasil ditambahkan');
     }
 
     /**

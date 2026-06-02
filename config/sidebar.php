@@ -12,8 +12,7 @@ return [
             'title' => 'Management User',
             'icon' => 'bi bi-people-fill',
             'route' => 'admin.management.user',
-            'active' => 'admin.management.*',
-
+            'active' => 'admin.management*',
         ],
     ],
 
@@ -38,12 +37,12 @@ return [
                 [
                     'title' => 'Kelola Kursus',
                     'url' => '/mentor/manajemen-kursus/kursus',
-                    'active' => 'mentor.manajemen-kursus.kursus.*',
+                    'active' => 'mentor.manajemen-kursus.kursus*',
                 ],
                 [
                     'title' => 'Kelola Materi',
                     'url' => '/mentor/manajemen-kursus/materi',
-                    'active' => 'mentor.manajemen-kursus.materi.*',
+                    'active' => 'mentor.manajemen-kursus.materi*',
                 ],
             ],
         ],

@@ -61,18 +61,20 @@
                                                             <td>{{ $m->judul }}</td>
                                                             <td>{{ $m->konten }}</td>
                                                             <td>{{ $m->video }}</td>
-                                                            <td class="d-flex justify-content-center gap-3">
-                                                                <a href="{{ route('mentor.manajemen-kursus.materi.edit', $m->id) }}"
-                                                                    class="btn btn-sm btn-warning">Edit</a>
-                                                                <form action="{{ route('mentor.manajemen-kursus.materi.delete', $m->id) }}"
-                                                                    method="POST">
-                                                                    @csrf
-                                                                    @method('DELETE')
-
-                                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                                        Hapus
-                                                                    </button>
-                                                                </form>
+                                                            <td>
+                                                                <div class="d-flex justify-content-center gap-3">
+                                                                    <a href="{{ route('mentor.manajemen-kursus.materi.edit', $m->id) }}"
+                                                                        class="btn btn-sm btn-warning">Edit</a>
+                                                                    <form action="{{ route('mentor.manajemen-kursus.materi.delete', $m->id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+    
+                                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                                            Hapus
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     @endforeach

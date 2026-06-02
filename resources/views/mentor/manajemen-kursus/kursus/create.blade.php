@@ -45,13 +45,26 @@
                                                 <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="judul">
+                                                <input type="text"
+                                                    class="form-control @error('judul') is-invalid @enderror"
+                                                    name="judul">
+                                                @error('judul')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Deskripsi</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <textarea class="form-control" name="deskripsi" rows="5"></textarea>
+                                                <textarea class="form-control @error('deskripsi') is-invalid @enderror"
+                                                    name="deskripsi" rows="5"></textarea>
+                                                @error('deskripsi')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
                                                 <a href="{{ route('mentor.manajemen-kursus.kursus') }}"

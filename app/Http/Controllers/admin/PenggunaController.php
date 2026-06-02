@@ -48,7 +48,6 @@ class PenggunaController extends Controller
      */
     public function edit(pengguna $pengguna)
     {
-
         return view('admin.manajemen-user.edit', compact('pengguna'));
     }
 

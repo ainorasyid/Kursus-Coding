@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <fieldset class="form-group">
-                                                    <select class="form-select" name="kursus_id">
+                                                    <select class="form-select @error('kursus_id') is-invalid @enderror" name="kursus_id">
                                                         <option value="">-- Pilih Kursus --</option>
                                                         @foreach ($kursus as $item)
                                                             <option value="{{ $item->id }}">
@@ -54,25 +54,45 @@
                                                             </option>
                                                         @endforeach
                                                     </select>
+                                                    @error('kursus_id')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="judul">
+                                                <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul">
+                                                @error('judul')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Konten</label>
                                             </div>
-                                            <div class="col-md-8 form-group">
-                                                <textarea class="form-control" name="konten" rows="5"></textarea>
+                                            <div class="col-md-8 form-group" >
+                                                <textarea class="form-control @error('konten') is-invalid @enderror" name="konten" rows="5"></textarea>
+                                                @error('konten')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Video</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control" name="video">
+                                                <input type="text" class="form-control @error('video') is-invalid @enderror" name="video">
+                                                @error('video')
+                                                    <div class="invalid-feedback mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
                                                 <a href="{{ route('mentor.manajemen-kursus.materi') }}"

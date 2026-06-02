@@ -42,28 +42,18 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
-        try {
+        $validateData = $request->validate([
+            'kursus_id' => 'required|exists:kursus,id',
+            'judul' => 'required|string|max:255',
+            'konten' => 'required|string',
+            'video' => 'required|string',
+        ]);
 
-            $validateData = $request->validate([
-                'kursus_id' => 'required|exists:kursus,id',
-                'judul' => 'required|string|max:255',
-                'konten' => 'required|string',
-                'video' => 'required|string',
-            ]);
+        Materi::create($validateData);
 
-            Materi::create($validateData);
-
-            return redirect()
-                ->route('mentor.manajemen-kursus.materi')
-                ->with('success', 'Materi berhasil ditambahkan');
-
-        } catch (\Exception $e) {
-
-            return redirect()
-                ->back()
-                ->withInput()
-                ->with('error', 'Materi gagal ditambahkan');
-        }
+        return redirect()
+            ->route('mentor.manajemen-kursus.materi')
+            ->with('success', 'Materi berhasil ditambahkan');
     }
 
     /**
