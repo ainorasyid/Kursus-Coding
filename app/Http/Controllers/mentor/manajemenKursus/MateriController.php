@@ -14,14 +14,8 @@ class MateriController extends Controller
      */
     public function index()
     {
-        $materi = Materi::with('kursus')
-            ->latest()
-            ->get();
-
-        return view(
-            'mentor.manajemen-kursus.materi.index',
-            compact('materi')
-        );
+        $materi = Materi::with('kursus')->get();
+        return view('mentor.manajemen-kursus.materi.index', compact('materi'));
     }
 
     /**

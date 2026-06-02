@@ -14,7 +14,7 @@ class KursusController extends Controller
      */
     public function index()
     {
-        $kursus = Kursus::latest()->get();
+        $kursus = Kursus::all();
         return view('mentor.manajemen-kursus.kursus.index', compact('kursus'));
     }
 

@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentor - Management User</title>
+    <title>Admin - Management User</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/dashboard/css/bootstrap.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/iconly/bold.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dashboard/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dashboard/css/app.css') }}">
@@ -27,7 +29,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-12 col-md-8 order-md-1 order-last mb-3">
-                                <h1>Tambah Materi</h1>
+                                <h1>Edit Kursus</h1>
                             </div>
                         </div>
                     </div>
@@ -35,70 +37,32 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="form form-horizontal"
-                                    action="{{ route('mentor.manajemen-kursus.materi.store') }}" method="POST">
+                                    action="{{ route('mentor.manajemen-kursus.kursus.update', $kursus->id) }}"
+                                    method="POST">
                                     @csrf
+                                    @method('PUT')
                                     <div class="form-body">
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <label>Kursus</label>
-                                            </div>
-                                            <div class="col-md-8 form-group">
-                                                <fieldset class="form-group">
-                                                    <select class="form-select @error('kursus_id') is-invalid @enderror" name="kursus_id">
-                                                        <option value="">-- Pilih Kursus --</option>
-                                                        @foreach ($kursus as $item)
-                                                            <option value="{{ $item->id }}">
-                                                                {{ $item->judul }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('kursus_id')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }} 
-                                                    </div>
-                                                @enderror
-                                                </fieldset>
-                                            </div>
                                             <div class="col-md-4">
                                                 <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul">
-                                                @error('judul')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                                <input type="text" class="form-control" name="judul"
+                                                    value="{{ $kursus->judul }}">
                                             </div>
                                             <div class="col-md-4">
-                                                <label>Konten</label>
-                                            </div>
-                                            <div class="col-md-8 form-group" >
-                                                <textarea class="form-control @error('konten') is-invalid @enderror" name="konten" rows="5"></textarea>
-                                                @error('konten')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Video</label>
+                                                <label>Deskripsi</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control @error('video') is-invalid @enderror" name="video">
-                                                @error('video')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                                <textarea class="form-control" name="deskripsi" rows="5" placeholder="Masukkan deskripsi materi">{{ old('deskripsi', $kursus->deskripsi) }}></textarea>
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
-                                                <a href="{{ route('mentor.manajemen-kursus.materi') }}"
+                                                <a href="{{ route('admin.manajemen-kursus.kursus') }}"
                                                     class="btn btn-primary me-1 mb-1 d-flex align-items-center gap-2"><i
                                                         class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
                                                 <div>
                                                     <button type="submit"
-                                                        class="btn btn-success me-1 mb-1">Tambah</button>
+                                                        class="btn btn-success me-1 mb-1">Update</button>
                                                     <button type="reset"
                                                         class="btn btn-light-danger me-1 mb-1">Reset</button>
                                                 </div>

@@ -14,6 +14,23 @@ return [
             'route' => 'admin.management.user',
             'active' => 'admin.management*',
         ],
+        [
+            'title' => 'Manajemen Kursus',
+            'icon' => 'bi bi-book-fill',
+            'active' => 'admin.manajemen-kursus*',
+            'submenu' => [
+                [
+                    'title' => 'Kelola Kursus',
+                    'url' => '/admin/manajemen-kursus/kursus',
+                    'active' => 'admin.manajemen-kursus.kursus*',
+                ],
+                [
+                    'title' => 'Kelola Materi',
+                    'url' => '/admin/manajemen-kursus/materi',
+                    'active' => 'admin.manajemen-kursus.materi*',
+                ],
+            ]
+        ]
     ],
 
     '2' => [
@@ -45,6 +62,9 @@ return [
                     'active' => 'mentor.manajemen-kursus.materi*',
                 ],
             ],
+        ],
+        [
+
         ],
     ],
 
