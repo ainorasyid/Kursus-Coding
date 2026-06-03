@@ -18,8 +18,7 @@ class PembelajaranController extends Controller
 
     public function show($kursusJudul, $materiJudul = null)
     {
-        $kursus = Kursus::where('judul', $kursusJudul)
-            ->firstOrFail();
+        $kursus = Kursus::where('judul', $kursusJudul)->firstOrFail();
 
         $allMateri = Materi::where('kursus_id', $kursus->id)
             ->orderBy('id')

@@ -6,6 +6,7 @@ use App\Http\Controllers\mentor\DashboardController as MentorDashboard;
 use App\Http\Controllers\mentor\manajemenKursus\KursusController;
 use App\Http\Controllers\mentor\manajemenKursus\MateriController;
 use App\Http\Controllers\mentor\PendaftarController;
+use App\Http\Controllers\mentor\QuizController;
 
 Route::prefix('mentor')->name('mentor.')->group(function() {
     Route::get('/dashboard', [MentorDashboard::class, 'index'])->name('dashboard');
@@ -26,4 +27,7 @@ Route::prefix('mentor')->name('mentor.')->group(function() {
     Route::get('/manajemen-kursus/materi/edit/{materi}', [MateriController::class, 'edit'])->name('manajemen-kursus.materi.edit');
     Route::put('/manajemen-kursus/materi/update/{materi}', [MateriController::class, 'update'])->name('manajemen-kursus.materi.update');
     Route::delete('/manajemen-kursus/materi/delete/{materi}', [MateriController::class, 'destroy'])->name('manajemen-kursus.materi.delete');
+
+    //Quiz
+    Route::get('/quiz', [QuizController::class, 'index'])->name('quiz');
 });

@@ -24,11 +24,7 @@ class MateriController extends Controller
     public function create()
     {
         $kursus = Kursus::latest()->get();
-
-        return view(
-            'mentor.manajemen-kursus.materi.create',
-            compact('kursus')
-        );
+        return view('mentor.manajemen-kursus.materi.create',compact('kursus'));
     }
 
     /**
@@ -65,10 +61,7 @@ class MateriController extends Controller
     {
         $kursus = Kursus::latest()->get();
 
-        return view(
-            'mentor.manajemen-kursus.materi.edit',
-            compact('materi', 'kursus')
-        );
+        return view('mentor.manajemen-kursus.materi.edit',compact('materi', 'kursus'));
     }
 
     /**
