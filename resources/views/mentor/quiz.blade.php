@@ -30,8 +30,7 @@
                         <form action="" method="POST">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <h6 class="text-center">Pilih Kursus</h6>
                                             <fieldset class="form-group">
                                                 <select class="form-select @error('kursus_id') is-invalid @enderror"
@@ -50,42 +49,11 @@
                                                 @enderror
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-6">
-                                            <h6 class="text-center">Pilih Judul</h6>
-                                            <fieldset class="form-group">
-                                                <select class="form-select @error('quiz') is-invalid @enderror" name="quiz">
-                                                    <option value="">-- Pilih Judul Quiz --</option>
-                                                    @foreach ($quiz as $item)
-                                                        <option value="{{ $item->id }}">
-                                                            {{ $item->judul }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                                @error('quiz')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </fieldset>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <label>Tambah Judul</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="text" class="form-control @error('judul') is-invalid @enderror"
-                                                name="judul">
-                                            @error('judul')
-                                                <div class="invalid-feedback mt-1">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
                                         <div class="col-md-4">
                                             <label>Pertanyaan</label>
                                         </div>
