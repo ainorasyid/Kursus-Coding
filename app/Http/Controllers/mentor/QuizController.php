@@ -12,7 +12,7 @@ class QuizController extends Controller
     public function index()
     {
         $kursus = Kursus::all();
-        $quiz = Quiz::with('kursus')->get();
+        $quiz = Quiz::where('kursus')->get();
         return view('mentor.quiz', compact('kursus', 'quiz'));
     }
 }
