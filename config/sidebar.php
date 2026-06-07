@@ -67,7 +67,7 @@ return [
             'title' => 'Manajemen Quiz',
             'icon' => 'bi bi-card-checklist',
             'route' => 'mentor.quiz',
-            'active' => 'mentor.quiz',
+            'active' => 'mentor.quiz*',
         ],
     ],
 

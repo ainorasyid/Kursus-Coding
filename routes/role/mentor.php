@@ -30,4 +30,9 @@ Route::prefix('mentor')->name('mentor.')->group(function() {
 
     //Quiz
     Route::get('/quiz', [QuizController::class, 'index'])->name('quiz');
+    Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+    Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
+    Route::get('/quiz/edit/{soal}', [QuizController::class, 'edit'])->name('quiz.edit');
+    Route::put('/quiz/update/{soal}', [QuizController::class, 'update'])->name('quiz.update');
+    Route::delete('/quiz/delete/{soal}', [QuizController::class, 'destroy'])->name('quiz.destroy');
 });

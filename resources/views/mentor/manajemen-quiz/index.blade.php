@@ -31,13 +31,14 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Tabel Materi</h4>
+                                        <h4 class="card-title">Tabel Soal Kursus</h4>
                                         <div class="d-flex align-items-center justify-content-between">
                                             <p class="text-muted">
-                                                Table semua materi yang ada pada kursus Codenova.
+                                                Table semua soal pada setiap kursus di Codenova.
                                             </p>
-                                            <a href="{{ route('mentor.manajemen-kursus.materi.create') }}" class="btn btn-sm btn-primary">
-                                                Tambah materi
+                                            <a href="{{ route('mentor.quiz.create') }}"
+                                                class="btn btn-sm btn-primary">
+                                                Tambah kursus
                                             </a>
                                         </div>
                                     </div>
@@ -47,30 +48,38 @@
                                             <table class="table table-hover mb-0 ">
                                                 <thead>
                                                     <tr>
-                                                        <th>Kursus</th>
-                                                        <th>Judul</th>
-                                                        <th>Konten</th>
-                                                        <th>Video</th>
-                                                        <th class="text-center">Aksi</th>
+                                                        <th rowspan="2">No</th>
+                                                        <th rowspan="2">Kursus</th>
+                                                        <th rowspan="2">Pertanyaan</th>
+                                                        <th colspan="4" class="text-center">Jawaban</th>
+                                                        <th rowspan="2">Jawaban Benar</th>
+                                                        <th rowspan="2" class="text-center">Aksi</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">A</th>
+                                                        <th class="text-center">B</th>
+                                                        <th class="text-center">C</th>
+                                                        <th class="text-center">D</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($materi as $m)
+                                                    @foreach ($soal as $item)
                                                         <tr>
-                                                            <td>{{ $m->kursus->judul }}</td>
-                                                            <td>{{ $m->judul }}</td>
-                                                            <td>{{ $m->konten }}</td>
-                                                            <td>{{ $m->video }}</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->kursus->judul }}</td>
+                                                            <td>{{ $item->soal }}</td>
+                                                            <td>{{ $item->pilihan_a }}</td>
+                                                            <td>{{ $item->pilihan_b }}</td>
+                                                            <td>{{ $item->pilihan_c }}</td>
+                                                            <td>{{ $item->pilihan_d }}</td>
+                                                            <td class="text-center">{{ $item->jawaban_benar }}</td>
                                                             <td>
-                                                                <div class="d-flex justify-content-center gap-3">
-                                                                    <a href="{{ route('mentor.manajemen-kursus.materi.edit', $m->id) }}"
-                                                                        class="btn btn-sm btn-warning">Edit</a>
-                                                                    <form action="{{ route('mentor.manajemen-kursus.materi.delete', $m->id) }}"
-                                                                        method="POST">
+                                                                <div class="d-flex gap-3">
+                                                                    <a href="{{ route('mentor.quiz.edit', $item->id) }}" class="btn-sm btn-warning">Edit</a>
+                                                                    <form action="{{ route('mentor.quiz.destroy', $item->id) }}" method="POST" class="d-inline">
                                                                         @csrf
                                                                         @method('DELETE')
-    
-                                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                                        <button type="submit" class="btn btn-danger btn-sm">
                                                                             Hapus
                                                                         </button>
                                                                     </form>
@@ -99,28 +108,20 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     @if (session()->has('success'))
         <script>
             Swal.fire({
                 icon: "success",
                 title: "Berhasil",
                 text: "{{ session('success') }}",
-            });
-        </script>
-    @endif
-    @error('error')
-        <script>
-            Swal.fire({
-                icon: "error",
-                title: "Gagal",
-                text: "{{ session('error') }}",
                 timer: 2000,
                 showConfirmButton: false
             });
         </script>
-    @enderror
+    @endif
 </body>
 
 </html>

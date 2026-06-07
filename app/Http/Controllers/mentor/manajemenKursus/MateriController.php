@@ -60,7 +60,6 @@ class MateriController extends Controller
     public function edit(Materi $materi)
     {
         $kursus = Kursus::latest()->get();
-
         return view('mentor.manajemen-kursus.materi.edit',compact('materi', 'kursus'));
     }
 

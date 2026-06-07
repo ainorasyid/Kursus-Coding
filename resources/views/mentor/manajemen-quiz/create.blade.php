@@ -27,17 +27,18 @@
             <div id="main-content">
                 <div class="page-content">
                     <section class="section">
-                        <form action="" method="POST">
+                        <form action="{{ route('mentor.quiz.store') }}" method="POST">
+                            @csrf
                             <div class="card">
                                 <div class="card-body">
                                         <div class="col-md-12">
                                             <h6 class="text-center">Pilih Kursus</h6>
                                             <fieldset class="form-group">
-                                                <select class="form-select @error('kursus_id') is-invalid @enderror"
-                                                    name="kursus_id">
+                                                <select class="form-select  @error('kursus_id') is-invalid @enderror" name="kursus_id">
                                                     <option value="">-- Pilih Kursus --</option>
                                                     @foreach ($kursus as $items)
-                                                        <option value="{{ $items->id }}">
+                                                        <option value="{{ $items->id }}"
+                                                        {{ old('kursus_id') == $items->id ? 'selected' : '' }}>
                                                             {{ $items->judul }}
                                                         </option>
                                                     @endforeach
@@ -59,9 +60,9 @@
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text"
-                                                class="form-control @error('pertanyaan') is-invalid @enderror"
-                                                name="pertanyaan">
-                                            @error('pertanyaan')
+                                                class="form-control @error('soal') is-invalid @enderror"
+                                                name="soal" value="{{ old('soal') }}">
+                                            @error('soal')
                                                 <div class="invalid-feedback mt-1">
                                                     {{ $message }}
                                                 </div>
@@ -71,9 +72,9 @@
                                             <label>Jawaban a</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="text" class="form-control @error('jawaban_a') is-invalid @enderror"
-                                                name="jawaban_a">
-                                            @error('jawaban_a')
+                                            <input type="text" class="form-control @error('pilihan_a') is-invalid @enderror"
+                                                name="pilihan_a" value="{{ old('pilihan_a') }}">
+                                            @error('pilihan_a')
                                                 <div class="invalid-feedback mt-1">
                                                     {{ $message }}
                                                 </div>
@@ -83,9 +84,9 @@
                                             <label>Jawaban b</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="text" class="form-control @error('jawaban_b') is-invalid @enderror"
-                                                name="jawaban_b">
-                                            @error('jawaban_b')
+                                            <input type="text" class="form-control @error('pilihan_b') is-invalid @enderror"
+                                                name="pilihan_b" value="{{ old('pilihan_b') }}">
+                                            @error('pilihan_b')
                                                 <div class="invalid-feedback mt-1">
                                                     {{ $message }}
                                                 </div>
@@ -95,9 +96,9 @@
                                             <label>Jawaban c</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="text" class="form-control @error('jawaban_c') is-invalid @enderror"
-                                                name="jawaban_c">
-                                            @error('jawaban_c')
+                                            <input type="text" class="form-control @error('pilihan_c') is-invalid @enderror"
+                                                name="pilihan_c" value="{{ old('pilihan_c') }}">
+                                            @error('pilihan_c')
                                                 <div class="invalid-feedback mt-1">
                                                     {{ $message }}
                                                 </div>
@@ -107,9 +108,9 @@
                                             <label>Jawaban d</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="text" class="form-control @error('jawaban_d') is-invalid @enderror"
-                                                name="jawaban_d">
-                                            @error('jawaban_d')
+                                            <input type="text" class="form-control @error('pilihan_d') is-invalid @enderror"
+                                                name="pilihan_d" value="{{ old('pilihan_d') }}">
+                                            @error('pilihan_d')
                                                 <div class="invalid-feedback mt-1">
                                                     {{ $message }}
                                                 </div>
@@ -122,28 +123,32 @@
                                             <div class="form-check d-flex gap-3">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input @error('jawaban_benar') is-invalid @enderror"
-                                                        type="radio" name="jawaban_benar" id="jawabanA" value="a">
+                                                        type="radio" name="jawaban_benar" id="jawabanA" value="a"
+                                                        {{ old('jawaban_benar') == 'a' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="jawabanA">
                                                         A
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input @error('jawaban_benar') is-invalid @enderror"
-                                                        type="radio" name="jawaban_benar" id="jawabanB" value="b">
+                                                        type="radio" name="jawaban_benar" id="jawabanB" value="b"
+                                                        {{ old('jawaban_benar') == 'b' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="jawabanB">
                                                         B
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input @error('jawaban_benar') is-invalid @enderror"
-                                                        type="radio" name="jawaban_benar" id="jawabanC" value="c">
+                                                        type="radio" name="jawaban_benar" id="jawabanC" value="c"
+                                                        {{ old('jawaban_benar') == 'c' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="jawabanC">
                                                         C
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input @error('jawaban_benar') is-invalid @enderror"
-                                                        type="radio" name="jawaban_benar" id="jawabanD" value="d">
+                                                        type="radio" name="jawaban_benar" id="jawabanD" value="d"
+                                                        {{ old('jawaban_benar') == 'd' ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="jawabanD">
                                                         D
                                                     </label>
@@ -155,7 +160,10 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <div class="col-sm-12 mt-4 d-flex justify-content-end">
+                                        <div class="col-sm-12 mt-4 d-flex justify-content-between">
+                                            <div>
+                                                <a href="{{ route('mentor.quiz') }}" class="btn btn-secondary me-1 mb-1">Kembali</a>
+                                            </div>
                                             <div>
                                                 <button type="submit" class="btn btn-success me-1 mb-1">Tambah</button>
                                                 <button type="reset" class="btn btn-light-danger me-1 mb-1">Reset</button>
@@ -178,6 +186,20 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil",
+                text: "{{ session('success') }}",
+                timer: 2000,
+                showConfirmButton: false
+            });
+        </script>
+    @endif
 </body>
 
 </html>

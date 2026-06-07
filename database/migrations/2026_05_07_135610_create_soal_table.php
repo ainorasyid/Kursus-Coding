@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('soal', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('quiz_id');
+            $table->unsignedBigInteger('soal_id');
             $table->text('soal');
             $table->string('pilihan_a');
             $table->string('pilihan_b');
             $table->string('pilihan_c');
             $table->string('pilihan_d');
             $table->enum('jawaban_benar', ['a', 'b', 'c', 'd']);
-            $table->foreign('quiz_id')
+            $table->foreign('soal_id')
                 ->references('id')
-                ->on('quiz');
+                ->on('soal');
             $table->timestamps();
         });
     }

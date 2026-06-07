@@ -99,6 +99,8 @@
                 icon: "success",
                 title: "Berhasil",
                 text: "{{ session('success') }}",
+                timer: 2000,
+                showConfirmButton: false
             });
         </script>
     @endif
@@ -108,6 +110,8 @@
                 icon: "error",
                 title: "Gagal",
                 text: "{{ session('error') }}",
+                timer: 2000,
+                showConfirmButton: false
             });
         </script>
     @enderror

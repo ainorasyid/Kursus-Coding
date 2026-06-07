@@ -14,8 +14,8 @@ class Kursus extends Model
         return $this->hasMany(Materi::class);
     }
 
-    public function quiz()
+    public function soal()
     {
-        return $this->hasMany(Quiz::class);
+        return $this->hasMany(Soal::class);
     }
 }

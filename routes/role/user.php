@@ -8,7 +8,10 @@ use App\Http\Controllers\user\DashboardController as UserDashboard;
 
 Route::prefix('user')->name('user.')->group(function() {
     Route::get('/dashboard', [UserDashboard::class, 'index'])->name('dashboard');
+
+    Route::get('/pembelajaran/quiz/{kursus}', [QuizController::class, 'show'])->name('pembelajaran.quiz');
+
     Route::get('/pembelajaran', [PembelajaranController::class, 'index'])->name('pembelajaran');
     Route::get('/pembelajaran/{kursus}/{materi?}', [PembelajaranController::class, 'show'])->name('pembelajaran.show');
-    Route::get('/pembelajaran/quiz/{kursus}', [QuizController::class, 'show'])->name('pembelajaran.quiz');
+    
 });
