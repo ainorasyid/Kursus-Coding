@@ -59,7 +59,6 @@ class QuizController extends Controller
             ->whereIn('soal_id', $soal->pluck('id'))
             ->get()
             ->keyBy('soal_id');
-        $hasil = Hasil::where('pengguna_id', $hasil->pengguna_id)->first();
         $kursus = Kursus::findOrFail($hasil->kursus_id);
 
         return view('user.pembelajaran.hasil', compact('hasil', 'soal', 'jawabanUser', 'kursus'));

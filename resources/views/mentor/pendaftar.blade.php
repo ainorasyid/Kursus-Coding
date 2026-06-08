@@ -68,6 +68,7 @@
                 </div>
                 <x-footer></x-footer>
             </div>
+            
         </div>
     </div>
 

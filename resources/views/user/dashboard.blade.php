@@ -50,6 +50,92 @@
                         </div>
                     </section>
                 </div>
+                <section class="row mt-4">
+
+                    <div class="col-md-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">Kursus</h6>
+                                <h2>{{ $totalKursus }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">Materi</h6>
+                                <h2>{{ $totalMateri }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">Quiz Selesai</h6>
+                                <h2>{{ $quizSelesai }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">Rata-rata Nilai</h6>
+                                <h2>{{ $nilaiRataRata }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h4>Hasil Quiz Terakhir</h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Kursus</th>
+                                        <th>Nilai</th>
+                                        <th>Tanggal</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @forelse($hasilTerbaru as $hasil)
+                                        <tr>
+                                            <td>{{ $hasil->kursus->judul }}</td>
+                                            <td>
+                                                <span class="badge bg-success">
+                                                    {{ $hasil->nilai }}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                {{ $hasil->created_at->format('d M Y') }}
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('user.pembelajaran.quiz.hasil', $hasil->id ) }}" class="btn btn-info">
+                                                    lihat
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="3" class="text-center">
+                                                Belum ada hasil quiz.
+                                            </td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </section>
 
                 <x-footer></x-footer>
             </div>
