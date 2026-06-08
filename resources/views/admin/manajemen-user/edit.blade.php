@@ -27,10 +27,8 @@
             <div id="main-content">
                 <div class="page-content">
                     <div class="page-title">
-                        <div class="row">
-                            <div class="col-12 col-md-8 order-md-1 order-last mb-3">
-                                <h1>Edit User {{ $pengguna->fullname }}</h1>
-                            </div>
+                        <div class="col-12 col-md-8 order-md-1 order-last mb-3">
+                            <h1>Edit User {{ $pengguna->fullname }}</h1>
                         </div>
                     </div>
                     <section class="section">

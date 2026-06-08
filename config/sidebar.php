@@ -30,7 +30,19 @@ return [
                     'active' => 'admin.manajemen-kursus.materi*',
                 ],
             ]
-        ]
+        ],
+        [
+            'title' => 'Manajemen Quiz',
+            'icon' => 'bi bi-card-checklist',
+            'route' => 'admin.quiz',
+            'active' => 'admin.quiz*',
+        ],
+        [
+            'title' => 'Hasil Quiz',
+            'icon' => 'bi bi-award',
+            'route' => 'admin.hasil.quiz',
+            'active' => 'admin.hasil.quiz*',
+        ],
     ],
 
     '2' => [
@@ -68,6 +80,12 @@ return [
             'icon' => 'bi bi-card-checklist',
             'route' => 'mentor.quiz',
             'active' => 'mentor.quiz*',
+        ],
+        [
+            'title' => 'Hasil Quiz',
+            'icon' => 'bi bi-award',
+            'route' => 'mentor.hasil.quiz',
+            'active' => 'mentor.hasil.quiz*',
         ],
     ],
 

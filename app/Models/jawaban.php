@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Jawaban extends Model
 {
     protected $table = 'jawaban';
+    
+    public function pengguna()
+    {
+        return $this->belongsTo(Pengguna::class);
+    }
+
+    public function soal()
+    {
+        return $this->belongsTo(Soal::class);
+    }
 }

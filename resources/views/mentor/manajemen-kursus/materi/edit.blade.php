@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <form class="form form-horizontal"
                                     action="{{ route('mentor.manajemen-kursus.materi.update', $materi->id) }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
 
@@ -82,17 +82,27 @@
                                                     class="form-control"
                                                     name="konten"
                                                     rows="5"
-                                                    placeholder="Masukkan konten materi">{{ old('konten', $materi->konten) }}</textarea>
+                                                    placeholder="Masukkan konten materi"> 
+                                                    {{ old('konten', $materi->konten) }}
+                                                </textarea>
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Video</label>
                                             </div>
-                                            <div class="col-md-8 form-group">
-                                                <input type="text"
-                                                    class="form-control"
-                                                    name="video"
-                                                    value="{{ old('video', $materi->video) }}"
-                                                    placeholder="Masukkan link video">
+                                            <div class="col-md-8 mb-1">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group mb-3">
+                                                        <label class="input-group-text"><i
+                                                                class="bi bi-upload"></i></label>
+                                                        <input type="file" class="form-control @error('video') is-invalid @enderror"
+                                                            name="video" accept="video/*">
+                                                        @error('video')
+                                                            <div class="invalid-feedback mt-1">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
                                                 <a href="{{ route('mentor.manajemen-kursus.materi') }}"

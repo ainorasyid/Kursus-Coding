@@ -46,37 +46,56 @@
             <div id="main-content">
                 <div class="page-heading">
                     <div class="page-title">
+                        <div class="d-flex justify-content-between">
+                            <h2 class="fw-bold">{{ $materi->judul ?? 'Materi belum ada' }}</h2>
+                            <a href="{{ route('user.pembelajaran') }}" class="btn btn-secondary mb-3">
+                                Kembali ke Kursus
+                            </a>
+                        </div>
                         <div class="row">
                             <div class="col-12 order-md-1 order-last">
                                 <div class="card">
                                     <div class="card-body">
-                                        <a href="{{ route('user.pembelajaran') }}" class="btn btn-secondary mb-3">
-                                            ← Kembali ke Kursus
-                                        </a>
-                                        <h2 class="fw-bold">{{ $materi->judul ?? 'Materi belum ada' }}</h2>
-                                        <hr>
                                         <div>{!! $materi->konten ?? 'Materi belum ada' !!}</div>
-                                        <div class="d-flex align-items-center mt-5">
-                                            <div>
-                                                @if($prev)<a href="{{ route('user.pembelajaran.show', [
-                                                        $kursus->judul,
-                                                        $prev->judul
-                                                    ]) }}" class="btn btn-secondary">← Prev</a>
-                                                @endif
+                                    </div>
+                                </div>
+                                @if ($materi->video)
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title mb-3">
+                                                Video Materi {{ $materi->judul }}
                                             </div>
-
-                                            <div class="ms-auto">
-                                                @if($next)<a href="{{ route('user.pembelajaran.show', [
-                                                        $kursus->judul,
-                                                        $next->judul
-                                                    ]) }}" class="btn btn-primary">Next →</a>
-                                                @else
-                                                    <a href="{{ route('user.pembelajaran.quiz', $materi->kursus_id) }}" class="btn btn-success">
-                                                        Kerjakan Quiz
-                                                    </a>
-                                                @endif
-                                            </div>
+                                            <video width="500" controls class="col-12">
+                                                <source src="{{ asset('storage/' . $materi->video) }}" type="video/mp4">
+                                            </video>
                                         </div>
+                                    </div>
+                                @endif
+                                <div class="d-flex align-items-center mt-5">
+                                    <div>
+                                        @if($prev)<a href="{{ route('user.pembelajaran.show', [
+                                                $kursus->judul,
+                                                $prev->judul
+                                            ]) }}" class="btn btn-secondary">← Prev</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="ms-auto">
+                                        @if($next)<a href="{{ route('user.pembelajaran.show', [
+                                                $kursus->judul,
+                                                $next->judul
+                                            ]) }}" class="btn btn-primary">Next →</a>
+                                        @elseif($hasil)
+                                            <a href="{{ route('user.pembelajaran.quiz.hasil', $hasil->id) }}"
+                                                class="btn btn-info">
+                                                Lihat Hasil Quiz
+                                            </a>
+                                        @else
+                                            <a href="{{ route('user.pembelajaran.quiz', $materi->kursus_id) }}"
+                                                class="btn btn-success">
+                                                Kerjakan Quiz
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

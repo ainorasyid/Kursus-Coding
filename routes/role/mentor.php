@@ -7,6 +7,7 @@ use App\Http\Controllers\mentor\manajemenKursus\KursusController;
 use App\Http\Controllers\mentor\manajemenKursus\MateriController;
 use App\Http\Controllers\mentor\PendaftarController;
 use App\Http\Controllers\mentor\QuizController;
+use App\Http\Controllers\mentor\HasilQuizController;
 
 Route::prefix('mentor')->name('mentor.')->group(function() {
     Route::get('/dashboard', [MentorDashboard::class, 'index'])->name('dashboard');
@@ -35,4 +36,7 @@ Route::prefix('mentor')->name('mentor.')->group(function() {
     Route::get('/quiz/edit/{soal}', [QuizController::class, 'edit'])->name('quiz.edit');
     Route::put('/quiz/update/{soal}', [QuizController::class, 'update'])->name('quiz.update');
     Route::delete('/quiz/delete/{soal}', [QuizController::class, 'destroy'])->name('quiz.destroy');
+
+    Route::get('/hasil', [HasilQuizController::class, 'index'])->name('hasil.quiz');
+    Route::get('/user-hasil/{hasil}', [HasilQuizController::class, 'show'])->name('hasil.quiz.user');
 });

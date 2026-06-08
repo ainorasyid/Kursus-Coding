@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\admin\PenggunaController;
+use App\Http\Controllers\admin\QuizController;
+use App\Http\Controllers\admin\HasilQuizController;
 use App\Http\Controllers\admin\manajemenKursus\KursusController;
 use App\Http\Controllers\admin\manajemenKursus\MateriController;
 
@@ -26,4 +28,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::put('/manajemen-kursus/materi/update/{materi}', [MateriController::class, 'update'])->name('manajemen-kursus.materi.update');
     Route::delete('/manajemen-kursus/materi/delete/{materi}', [MateriController::class, 'destroy'])->name('manajemen-kursus.materi.delete');
 
+    Route::get('/quiz', [QuizController::class, 'index'])->name('quiz');
+
+    Route::get('/hasil', [HasilQuizController::class, 'index'])->name('hasil.quiz');
+    Route::get('/user-hasil/{hasil}', [HasilQuizController::class, 'show'])->name('hasil.quiz.user');
 });

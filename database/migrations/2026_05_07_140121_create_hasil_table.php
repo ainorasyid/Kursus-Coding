@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('hasil', function (Blueprint $table) {
             $table->id();
             $table->unsignedBiginteger('pengguna_id');
-            $table->unsignedBigInteger('quiz_id');
+            $table->unsignedBigInteger('kursus_id');
             $table->integer('nilai');
             $table->foreign('pengguna_id')
                 ->references('id')
                 ->on('pengguna');
-            $table->foreign('quiz_id')
+            $table->foreign('kursus_id')
                 ->references('id')
-                ->on('quiz');
+                ->on('kursus');
             $table->timestamps();
         });
     }

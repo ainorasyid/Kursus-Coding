@@ -89,6 +89,16 @@
     <script src="{{ asset('assets/dashboard/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session()->has('success'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil",
+                text: "{{ session('success') }}",
+            });
+        </script>
+    @endif
 </body>
 
 </html>

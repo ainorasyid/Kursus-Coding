@@ -35,7 +35,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <form class="form form-horizontal"
-                                    action="{{ route('mentor.manajemen-kursus.materi.store') }}" method="POST">
+                                    action="{{ route('mentor.manajemen-kursus.materi.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-body">
                                         <div class="row">
@@ -44,7 +44,8 @@
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <fieldset class="form-group">
-                                                    <select class="form-select @error('kursus_id') is-invalid @enderror" name="kursus_id">
+                                                    <select class="form-select @error('kursus_id') is-invalid @enderror"
+                                                        name="kursus_id">
                                                         <option value="">-- Pilih Kursus --</option>
                                                         @foreach ($kursus as $item)
                                                             <option value="{{ $item->id }}">
@@ -53,17 +54,19 @@
                                                         @endforeach
                                                     </select>
                                                     @error('kursus_id')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }} 
-                                                    </div>
-                                                @enderror
+                                                        <div class="invalid-feedback mt-1">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </fieldset>
                                             </div>
                                             <div class="col-md-4">
                                                 <label>Judul</label>
                                             </div>
                                             <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul">
+                                                <input type="text"
+                                                    class="form-control @error('judul') is-invalid @enderror"
+                                                    name="judul">
                                                 @error('judul')
                                                     <div class="invalid-feedback mt-1">
                                                         {{ $message }}
@@ -73,8 +76,9 @@
                                             <div class="col-md-4">
                                                 <label>Konten</label>
                                             </div>
-                                            <div class="col-md-8 form-group" >
-                                                <textarea class="form-control @error('konten') is-invalid @enderror" name="konten" rows="5"></textarea>
+                                            <div class="col-md-8 form-group">
+                                                <textarea class="form-control @error('konten') is-invalid @enderror"
+                                                    name="konten" rows="5"></textarea>
                                                 @error('konten')
                                                     <div class="invalid-feedback mt-1">
                                                         {{ $message }}
@@ -84,13 +88,20 @@
                                             <div class="col-md-4">
                                                 <label>Video</label>
                                             </div>
-                                            <div class="col-md-8 form-group">
-                                                <input type="text" class="form-control @error('video') is-invalid @enderror" name="video">
-                                                @error('video')
-                                                    <div class="invalid-feedback mt-1">
-                                                        {{ $message }}
+                                            <div class="col-md-8 mb-1">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group mb-3">
+                                                        <label class="input-group-text">
+                                                            <i class="bi bi-upload"></i></label>
+                                                        <input type="file"
+                                                            class="form-control @error('video') is-invalid @enderror" name="video" accept="video/*">
+                                                        @error('video')
+                                                            <div class="invalid-feedback mt-1">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                     </div>
-                                                @enderror
+                                                </div>
                                             </div>
                                             <div class="col-sm-12 mt-4 d-flex justify-content-between">
                                                 <a href="{{ route('mentor.manajemen-kursus.materi') }}"

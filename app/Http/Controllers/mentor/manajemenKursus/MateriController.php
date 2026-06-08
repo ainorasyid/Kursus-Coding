@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kursus;
 use App\Models\Materi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MateriController extends Controller
 {
@@ -36,8 +37,12 @@ class MateriController extends Controller
             'kursus_id' => 'required|exists:kursus,id',
             'judul' => 'required|string|max:255',
             'konten' => 'required|string',
-            'video' => 'required|string',
+            'video' => 'nullable|file|mimes:mp4,mov,avi,mkv|max:51200',
         ]);
+
+        if ($request->hasFile('video')) {
+            $validateData['video'] = $request->file('video')->store('video-materi', 'public');
+        }
 
         Materi::create($validateData);
 
@@ -68,26 +73,27 @@ class MateriController extends Controller
      */
     public function update(Request $request, Materi $materi)
     {
-        try {
-            $validateData = $request->validate([
-                'kursus_id' => 'required|exists:kursus,id',
-                'judul' => 'required|string|max:255',
-                'konten' => 'required|string',
-                'video' => 'nullable|string',
-            ]);
+        $validateData = $request->validate([
+            'kursus_id' => 'required|exists:kursus,id',
+            'judul' => 'required|string|max:255',
+            'konten' => 'required|string',
+            'video' => 'nullable|file|mimes:mp4,mov,avi,mkv|max:51200',
+        ]);
 
-            $materi->update($validateData);
-
-            return redirect()
-                ->route('mentor.manajemen-kursus.materi')
-                ->with('success', 'Materi berhasil diupdate');
-
-        } catch (\Exception $e) {
-            return redirect()
-                ->back()
-                ->withInput()
-                ->with('error', 'Materi gagal diupdate');
+        if ($request->hasFile('video')) {
+            if ($materi->video) {
+                Storage::disk('public')->delete($materi->video);
+            }
+            $validateData['video'] = $request->file('video')->store('video-materi', 'public');
+        } else {
+            $validateData['video'] = $materi->video; 
         }
+
+        $materi->update($validateData);
+
+        return redirect()
+            ->route('mentor.manajemen-kursus.materi')
+            ->with('success', 'Materi berhasil diupdate');
     }
 
     /**
@@ -95,17 +101,14 @@ class MateriController extends Controller
      */
     public function destroy(Materi $materi)
     {
-        try {
-            $materi->delete();
-
-            return redirect()
-                ->route('mentor.manajemen-kursus.materi')
-                ->with('success', 'Materi berhasil dihapus');
-
-        } catch (\Exception $e) {
-            return redirect()
-                ->back()
-                ->with('error', 'Materi gagal dihapus');
+        if ($materi->video) {
+            Storage::disk('public')->delete($materi->video);
         }
+
+        $materi->delete();
+
+        return redirect()
+            ->route('mentor.manajemen-kursus.materi')
+            ->with('success', 'Materi berhasil dihapus');
     }
 }

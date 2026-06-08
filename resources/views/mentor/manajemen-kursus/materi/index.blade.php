@@ -59,8 +59,15 @@
                                                         <tr>
                                                             <td>{{ $m->kursus->judul }}</td>
                                                             <td>{{ $m->judul }}</td>
-                                                            <td>{{ $m->konten }}</td>
-                                                            <td>{{ $m->video }}</td>
+                                                            <td>{{ Str::limit(strip_tags($m->konten), 50) }}</td>
+                                                            <td>
+                                                                @if ($m->video)
+                                                                    {{ Str::limit($m->video ?? '', 20) }}
+                                                                @else
+                                                                    -
+                                                                @endif
+
+                                                            </td>
                                                             <td>
                                                                 <div class="d-flex justify-content-center gap-3">
                                                                     <a href="{{ route('mentor.manajemen-kursus.materi.edit', $m->id) }}"
@@ -69,7 +76,7 @@
                                                                         method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
-    
+
                                                                         <button type="submit" class="btn btn-sm btn-danger">
                                                                             Hapus
                                                                         </button>

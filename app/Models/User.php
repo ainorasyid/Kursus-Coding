@@ -18,6 +18,16 @@ class User extends Authenticatable
     {
         return $this->hasOne(Pengguna::class, 'users_id');
     }
+    
+    public function jawaban()
+    {
+        return $this->hasMany(Jawaban::class);
+    }
+
+    public function hasil()
+    {
+        return $this->hasMany(Hasil::class);
+    }
 
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
