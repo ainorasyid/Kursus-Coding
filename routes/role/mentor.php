@@ -9,7 +9,7 @@ use App\Http\Controllers\mentor\PendaftarController;
 use App\Http\Controllers\mentor\QuizController;
 use App\Http\Controllers\mentor\HasilQuizController;
 
-Route::prefix('mentor')->name('mentor.')->group(function() {
+Route::middleware(['auth', 'role:mentor'])->prefix('mentor')->name('mentor.')->group(function() {
     Route::get('/dashboard', [MentorDashboard::class, 'index'])->name('dashboard');
     Route::get('/pendaftar', [PendaftarController::class, 'index'])->name('pendaftar');
 

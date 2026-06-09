@@ -14,6 +14,11 @@ use Illuminate\Notifications\Notifiable;
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
+    public function peran()
+    {
+        return $this->belongsTo(\App\Models\Peran::class);
+    }
+    
     public function pengguna()
     {
         return $this->hasOne(Pengguna::class, 'users_id');

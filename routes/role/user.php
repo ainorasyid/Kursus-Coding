@@ -6,7 +6,7 @@ use App\Http\Controllers\user\pembelajaran\PembelajaranController;
 use App\Http\Controllers\user\pembelajaran\QuizController;
 use App\Http\Controllers\user\DashboardController as UserDashboard;
 
-Route::prefix('user')->name('user.')->group(function () {
+Route::middleware(['auth', 'role:pengguna'])->prefix('user')->name('user.')->group(function () {
     Route::get('/dashboard', [UserDashboard::class, 'index'])->name('dashboard');
 
     Route::get('/pembelajaran/quiz/{kursus}', [QuizController::class, 'show'])->name('pembelajaran.quiz');

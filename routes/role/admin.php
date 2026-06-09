@@ -7,7 +7,7 @@ use App\Http\Controllers\admin\HasilQuizController;
 use App\Http\Controllers\admin\manajemenKursus\KursusController;
 use App\Http\Controllers\admin\manajemenKursus\MateriController;
 
-Route::prefix('admin')->name('admin.')->group(function() {
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function() {
     Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('dashboard');
 
     // Manajemen User

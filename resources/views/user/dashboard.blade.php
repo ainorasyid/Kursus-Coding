@@ -22,7 +22,6 @@
         <x-sidebar></x-sidebar>
 
         <div id="main" class='layout-navbar'>
-
             <x-user.navbar></x-user.navbar>
 
             <div id="main-content">
@@ -91,9 +90,7 @@
                         <div class="card-header">
                             <h4>Hasil Quiz Terakhir</h4>
                         </div>
-
                         <div class="card-body">
-
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -103,7 +100,6 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @forelse($hasilTerbaru as $hasil)
                                         <tr>
@@ -130,9 +126,7 @@
                                         </tr>
                                     @endforelse
                                 </tbody>
-
                             </table>
-
                         </div>
                     </div>
                 </section>
